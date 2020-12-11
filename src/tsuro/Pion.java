@@ -10,5 +10,9 @@ package tsuro;
  * @author nykol
  */
 public class Pion {
+    String Couleur;
     
+    public Pion(String couleur) {
+        Couleur = couleur;
+    }
 }
