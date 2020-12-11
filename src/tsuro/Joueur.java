@@ -11,5 +11,7 @@ package tsuro;
  * @author nykol
  */
 public class Joueur {
-    
+    String Nom;
+    String Couleur;
+    Pion PionJ = new Pion(Couleur);
 }
