@@ -28,6 +28,11 @@ public class MainInterface extends javax.swing.JFrame {
             TuileGraphique tuileGraph = new TuileGraphique(); // tuileGraph a vérifier si erreur
             CartesJoueur.add(tuileGraph);
         }
+        
+        Pioche pioche = new Pioche();  //test pour mélange pioche
+        for (int i = 0; i<35;i++) {
+            System.out.println(pioche.TuilePioche[1].IndexTuile);
+        } // fin test pour mélange pioche
     }
 
     /**
