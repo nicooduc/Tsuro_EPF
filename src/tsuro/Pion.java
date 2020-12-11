@@ -10,9 +10,10 @@ package tsuro;
  * @author nykol
  */
 public class Pion {
-    String Couleur;
+    String Couleur; //couleur pion
+    
     
     public Pion(String couleur) {
-        Couleur = couleur;
+        Couleur = couleur; //constructeur couleur jeton
     }
 }

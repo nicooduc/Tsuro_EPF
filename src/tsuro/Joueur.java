@@ -11,7 +11,8 @@ package tsuro;
  * @author nykol
  */
 public class Joueur {
-    String Nom;
-    String Couleur;
-    Pion PionJ = new Pion(Couleur);
+    String Nom; //nom joueur
+    String Couleur; //couleur joueur
+    Pion PionJ = new Pion(Couleur); //pion joueur
+    Tuile[] TuileJ = new Tuile[3]; //place main de tuiles du joueur
 }
