@@ -13,8 +13,8 @@ public class Tuile {
     int IndexTuile;
     
     public Tuile (int index) {
-        IndexTuile = index; 
-}
+        IndexTuile = index;
+    }
     
     public void tile0() {
         int[] tab0 = {7,4,6,2,8,3,1,5};
