@@ -31,7 +31,7 @@ public class MainInterface extends javax.swing.JFrame {
         
         Pioche pioche = new Pioche();  //test pour mélange pioche
         for (int i = 0; i<35;i++) {
-            System.out.println(pioche.TuilePioche[1].IndexTuile);
+            System.out.println(pioche.TuilePioche[i].IndexTuile);
         } // fin test pour mélange pioche
     }
 
