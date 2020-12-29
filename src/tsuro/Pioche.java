@@ -19,7 +19,7 @@ public class Pioche {
         }
         
         for (int pos = TuilePioche.length - 1; pos >= 1; pos--) { // mélange la pioche
-            //hasard reçoit un nombre entier aléatoire entre 0 et position
+            //hasard reçoit un nombre entier aléatoire entre 0 et pos
             int hasard = (int) Math.floor(Math.random() * (pos + 1));
             //Echange
             Tuile sauve = TuilePioche[pos];

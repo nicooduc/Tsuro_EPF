@@ -10,7 +10,12 @@ package tsuro;
  * @author nykol
  */
 public class MainInterface extends javax.swing.JFrame {
-
+    
+    int nbr_joueurs; // a demander en début de partie
+    Plateau plateau = new Plateau(); // plateau de jeu
+    Joueur ListeJoueurs[] = new Joueur[nbr_joueurs]; // tableau comprenant tout les joueurs
+    Joueur joueurCourant;
+    
     /**
      * Creates new form MainInterface
      */
@@ -19,20 +24,26 @@ public class MainInterface extends javax.swing.JFrame {
         
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
-                TuileGraphique tuileGraph = new TuileGraphique();
+                TuileGraphique tuileGraph = new TuileGraphique(plateau.grilleTuile[i][j]);
+                tuileGraph.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        Tuile t = tuileGraph.TuileAssociee;
+                        
+                        // actions à réaliser lorsque une case de la grille est activées à placer ici
+                        
+                        PlateauJeu.repaint(); // mettre a jour le plateau de jeu
+                    }
+                });
                 PlateauJeu.add(tuileGraph);
             }
         }
         
         for (int i = 0; i < 3; i++) {
-            TuileGraphique tuileGraph = new TuileGraphique(); // tuileGraph a vérifier si erreur
+            TuileGraphique tuileGraph = new TuileGraphique(joueurCourant.TuileJ[i]);
             CartesJoueur.add(tuileGraph);
         }
         
-        Pioche pioche = new Pioche();  //test pour mélange pioche
-        for (int i = 0; i<35;i++) {
-            System.out.println(pioche.TuilePioche[i].IndexTuile);
-        } // fin test pour mélange pioche
+        
     }
 
     /**
