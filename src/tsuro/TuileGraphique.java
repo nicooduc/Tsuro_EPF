@@ -59,6 +59,7 @@ public class TuileGraphique extends JButton {
         TuileAssociee = tuile;
     }
     
+    @Override
     public void paintComponent (Graphics G){
         super.paintComponent(G);
         if (TuileAssociee.IndexTuile == -1) {

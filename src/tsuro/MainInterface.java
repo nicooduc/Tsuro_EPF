@@ -362,7 +362,10 @@ public class MainInterface extends javax.swing.JFrame {
         DistribuerCarte();
         Random random = new Random();
         joueurCourant = ListeJoueurs[random.nextInt(8)];
-                
+        
+        Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
+        Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
+        Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
     }
     
     public void DistribuerCarte() {
