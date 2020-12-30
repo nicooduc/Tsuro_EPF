@@ -41,7 +41,7 @@ public class MainInterface extends javax.swing.JFrame {
             }
         }
         
-        /*for (int i = 0; i < 3; i++) { // en com le temps de test
+        /*for (int i = 0; i < 3; i++) { // en com le temps de créer le joueurCourant
             TuileGraphique tuileGraph = new TuileGraphique(joueurCourant.TuileJ[i]);
             CartesJoueur.add(tuileGraph);
         }*/
@@ -234,90 +234,30 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void Btn_init1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_init1ActionPerformed
         // TODO add your handling code here:
-        switch (Nbr_Joueurs.getText()) {
+        switch (Nbr_Joueurs.getText()) { // récupération nombre de joueur et affichage du nombre de couleurs correspondant
             case "2":
-                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
-                System.out.print(nbr_joueurs);
-                Panneau_joueurs.setVisible(true);
                 Nom_Joueur_Vert.setVisible(false);
                 LabelJVert.setVisible(false);
-                Nom_Joueur_Jaune.setVisible(false);
-                LabelJJaune.setVisible(false);
-                Nom_Joueur_Bleu.setVisible(false);
-                LabelJBleu.setVisible(false);
-                Nom_Joueur_Violet.setVisible(false);
-                LabelJViolet.setVisible(false);
-                Nom_Joueur_Cyan.setVisible(false);
-                LabelJCyan.setVisible(false);
-                Nom_Joueur_Blanc.setVisible(false);
-                LabelJBlanc.setVisible(false);
-                Btn_init1.setEnabled(false);
-                break;
             case "3":
-                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
-                System.out.print(nbr_joueurs);
-                Panneau_joueurs.setVisible(true);
                 Nom_Joueur_Jaune.setVisible(false);
                 LabelJJaune.setVisible(false);
-                Nom_Joueur_Bleu.setVisible(false);
-                LabelJBleu.setVisible(false);
-                Nom_Joueur_Violet.setVisible(false);
-                LabelJViolet.setVisible(false);
-                Nom_Joueur_Cyan.setVisible(false);
-                LabelJCyan.setVisible(false);
-                Nom_Joueur_Blanc.setVisible(false);
-                LabelJBlanc.setVisible(false);
-                Btn_init1.setEnabled(false);
-                break;
             case "4":
-                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
-                System.out.print(nbr_joueurs);
-                Panneau_joueurs.setVisible(true);
                 Nom_Joueur_Bleu.setVisible(false);
                 LabelJBleu.setVisible(false);
-                Nom_Joueur_Violet.setVisible(false);
-                LabelJViolet.setVisible(false);
-                Nom_Joueur_Cyan.setVisible(false);
-                LabelJCyan.setVisible(false);
-                Nom_Joueur_Blanc.setVisible(false);
-                LabelJBlanc.setVisible(false);
-                Btn_init1.setEnabled(false);
-                break;
             case "5":
-                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
-                System.out.print(nbr_joueurs);
-                Panneau_joueurs.setVisible(true);
                 Nom_Joueur_Violet.setVisible(false);
                 LabelJViolet.setVisible(false);
-                Nom_Joueur_Cyan.setVisible(false);
-                LabelJCyan.setVisible(false);
-                Nom_Joueur_Blanc.setVisible(false);
-                LabelJBlanc.setVisible(false);
-                Btn_init1.setEnabled(false);
-                break;
             case "6":
-                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
-                System.out.print(nbr_joueurs);
-                Panneau_joueurs.setVisible(true);
                 Nom_Joueur_Cyan.setVisible(false);
                 LabelJCyan.setVisible(false);
-                Nom_Joueur_Blanc.setVisible(false);
-                LabelJBlanc.setVisible(false);
-                Btn_init1.setEnabled(false);
-                break;
             case "7":
-                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
-                System.out.print(nbr_joueurs);
-                Panneau_joueurs.setVisible(true);
                 Nom_Joueur_Blanc.setVisible(false);
                 LabelJBlanc.setVisible(false);
-                Btn_init1.setEnabled(false);
-                break;
             case "8":
-                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
-                System.out.print(nbr_joueurs);
                 Panneau_joueurs.setVisible(true);
                 Btn_init1.setEnabled(false);
+                Nbr_Joueurs.setEnabled(false);
+                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
                 break;
             default:
                 break;
@@ -329,10 +269,41 @@ public class MainInterface extends javax.swing.JFrame {
         CartesJoueur.setVisible(true);
         Pioche.setVisible(true);
         
-        String nomJNoir = Nom_Joueur_Noir.getText();
-        Joueur JNoir = new Joueur(nomJNoir, "Noir");
-        
-        
+        switch(nbr_joueurs) { // récupération des noms des joueurs et création (pas de break pour dérouler la suite et éviter les répétitions)
+            case 8:
+                String nomJBlanc = Nom_Joueur_Blanc.getText();
+                Joueur JBlanc = new Joueur(nomJBlanc, "Blanc");
+                Nom_Joueur_Blanc.setEnabled(false);
+            case 7:
+                String nomJCyan = Nom_Joueur_Cyan.getText();
+                Joueur JCyan = new Joueur(nomJCyan, "Cyan");
+                Nom_Joueur_Cyan.setEnabled(false);
+            case 6:
+                String nomJViolet = Nom_Joueur_Violet.getText();
+                Joueur JViolet = new Joueur(nomJViolet, "Violet");
+                Nom_Joueur_Violet.setEnabled(false);
+            case 5:
+                String nomJBleu = Nom_Joueur_Bleu.getText();
+                Joueur JBleu = new Joueur(nomJBleu, "Bleu");
+                Nom_Joueur_Bleu.setEnabled(false);
+            case 4:
+                String nomJJaune = Nom_Joueur_Jaune.getText();
+                Joueur JJaune = new Joueur(nomJJaune, "Jaune");
+                Nom_Joueur_Jaune.setEnabled(false);
+            case 3:
+                String nomJVert = Nom_Joueur_Vert.getText();
+                Joueur JVert = new Joueur(nomJVert, "Vert");
+                Nom_Joueur_Vert.setEnabled(false);
+            case 2:
+                String nomJRouge = Nom_Joueur_Rouge.getText();
+                Joueur JRouge = new Joueur(nomJRouge, "Rouge");
+                Nom_Joueur_Rouge.setEnabled(false);
+                String nomJNoir = Nom_Joueur_Noir.getText();
+                Joueur JNoir = new Joueur(nomJNoir, "Noir");
+                Nom_Joueur_Noir.setEnabled(false);
+                Btn_init2.setEnabled(false);
+                break;
+        }
     }//GEN-LAST:event_Btn_init2ActionPerformed
 
     private void Nom_Joueur_NoirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nom_Joueur_NoirActionPerformed
