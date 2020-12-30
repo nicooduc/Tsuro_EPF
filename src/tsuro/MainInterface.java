@@ -357,6 +357,8 @@ public class MainInterface extends javax.swing.JFrame {
             ListeJoueurs[pos] = ListeJoueurs[hasard];
             ListeJoueurs[hasard] = sauve;
         }
+        
+        DistribuerCarte();
     }
     
     public void DistribuerCarte() {
