@@ -22,6 +22,8 @@ public class MainInterface extends javax.swing.JFrame {
     public MainInterface() {
         initComponents();
         CartesJoueur.setVisible(false);
+        Pioche.setVisible(false);
+        Panneau_joueurs.setVisible(false);
         
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
@@ -39,10 +41,10 @@ public class MainInterface extends javax.swing.JFrame {
             }
         }
         
-        for (int i = 0; i < 3; i++) {
+        /*for (int i = 0; i < 3; i++) { // en com le temps de test
             TuileGraphique tuileGraph = new TuileGraphique(joueurCourant.TuileJ[i]);
             CartesJoueur.add(tuileGraph);
-        }
+        }*/
         
         
     }
@@ -64,21 +66,21 @@ public class MainInterface extends javax.swing.JFrame {
         Nbr_Joueurs = new javax.swing.JTextField();
         Btn_init1 = new javax.swing.JButton();
         Panneau_joueurs = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        LabelJNoir = new javax.swing.JLabel();
         Nom_Joueur_Noir = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        LabelJRouge = new javax.swing.JLabel();
         Nom_Joueur_Rouge = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        LabelJVert = new javax.swing.JLabel();
         Nom_Joueur_Vert = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        LabelJJaune = new javax.swing.JLabel();
         Nom_Joueur_Jaune = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        LabelJBleu = new javax.swing.JLabel();
         Nom_Joueur_Bleu = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        LabelJViolet = new javax.swing.JLabel();
         Nom_Joueur_Violet = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        LabelJCyan = new javax.swing.JLabel();
         Nom_Joueur_Cyan = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
+        LabelJBlanc = new javax.swing.JLabel();
         Nom_Joueur_Blanc = new javax.swing.JTextField();
         Btn_init2 = new javax.swing.JButton();
 
@@ -102,68 +104,84 @@ public class MainInterface extends javax.swing.JFrame {
         Panneau_start.setPreferredSize(new java.awt.Dimension(314, 130));
         Panneau_start.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Nombre de joueurs :");
-        Panneau_start.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        jLabel1.setText("Nombre de joueurs (2 à 8):");
+        Panneau_start.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
-        Nbr_Joueurs.setText("jTextField1");
-        Panneau_start.add(Nbr_Joueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+        Nbr_Joueurs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Nbr_JoueursActionPerformed(evt);
+            }
+        });
+        Panneau_start.add(Nbr_Joueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 30, -1));
 
         Btn_init1.setText("GO !");
+        Btn_init1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_init1ActionPerformed(evt);
+            }
+        });
         Panneau_start.add(Btn_init1, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 73, 110, 40));
 
         Panneau_joueurs.setBackground(new java.awt.Color(255, 255, 204));
         Panneau_joueurs.setPreferredSize(new java.awt.Dimension(462, 190));
         Panneau_joueurs.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("Joueur Noir");
-        Panneau_joueurs.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        LabelJNoir.setText("Joueur Noir");
+        Panneau_joueurs.add(LabelJNoir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        Nom_Joueur_Noir.setText("jTextField1");
+        Nom_Joueur_Noir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Nom_Joueur_NoirActionPerformed(evt);
+            }
+        });
         Panneau_joueurs.add(Nom_Joueur_Noir, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 80, -1));
 
-        jLabel3.setText("Joueur Rouge");
-        Panneau_joueurs.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
-
-        Nom_Joueur_Rouge.setText("jTextField1");
+        LabelJRouge.setText("Joueur Rouge");
+        Panneau_joueurs.add(LabelJRouge, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
         Panneau_joueurs.add(Nom_Joueur_Rouge, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 80, -1));
 
-        jLabel4.setText("Joueur Vert");
-        Panneau_joueurs.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        LabelJVert.setText("Joueur Vert");
+        Panneau_joueurs.add(LabelJVert, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        Nom_Joueur_Vert.setText("jTextField1");
+        Nom_Joueur_Vert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Nom_Joueur_VertActionPerformed(evt);
+            }
+        });
         Panneau_joueurs.add(Nom_Joueur_Vert, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 80, -1));
 
-        jLabel5.setText("Joueur Jaune");
-        Panneau_joueurs.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
-
-        Nom_Joueur_Jaune.setText("jTextField1");
+        LabelJJaune.setText("Joueur Jaune");
+        Panneau_joueurs.add(LabelJJaune, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
         Panneau_joueurs.add(Nom_Joueur_Jaune, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 80, -1));
 
-        jLabel6.setText("Joueur Bleu");
-        Panneau_joueurs.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
-
-        Nom_Joueur_Bleu.setText("jTextField1");
+        LabelJBleu.setText("Joueur Bleu");
+        Panneau_joueurs.add(LabelJBleu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
         Panneau_joueurs.add(Nom_Joueur_Bleu, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 80, -1));
 
-        jLabel7.setText("Joueur Violet");
-        Panneau_joueurs.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
-
-        Nom_Joueur_Violet.setText("jTextField1");
+        LabelJViolet.setText("Joueur Violet");
+        Panneau_joueurs.add(LabelJViolet, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
         Panneau_joueurs.add(Nom_Joueur_Violet, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 80, -1));
 
-        jLabel8.setText("Joueur Cyan");
-        Panneau_joueurs.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
-
-        Nom_Joueur_Cyan.setText("jTextField1");
+        LabelJCyan.setText("Joueur Cyan");
+        Panneau_joueurs.add(LabelJCyan, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
         Panneau_joueurs.add(Nom_Joueur_Cyan, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 80, -1));
 
-        jLabel9.setText("Joueur Blanc");
-        Panneau_joueurs.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
+        LabelJBlanc.setText("Joueur Blanc");
+        Panneau_joueurs.add(LabelJBlanc, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
 
-        Nom_Joueur_Blanc.setText("jTextField1");
+        Nom_Joueur_Blanc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Nom_Joueur_BlancActionPerformed(evt);
+            }
+        });
         Panneau_joueurs.add(Nom_Joueur_Blanc, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 80, -1));
 
         Btn_init2.setText("GO !");
+        Btn_init2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_init2ActionPerformed(evt);
+            }
+        });
         Panneau_joueurs.add(Btn_init2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -210,6 +228,125 @@ public class MainInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void Nbr_JoueursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nbr_JoueursActionPerformed
+        // Inutile
+    }//GEN-LAST:event_Nbr_JoueursActionPerformed
+
+    private void Btn_init1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_init1ActionPerformed
+        // TODO add your handling code here:
+        switch (Nbr_Joueurs.getText()) {
+            case "2":
+                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
+                System.out.print(nbr_joueurs);
+                Panneau_joueurs.setVisible(true);
+                Nom_Joueur_Vert.setVisible(false);
+                LabelJVert.setVisible(false);
+                Nom_Joueur_Jaune.setVisible(false);
+                LabelJJaune.setVisible(false);
+                Nom_Joueur_Bleu.setVisible(false);
+                LabelJBleu.setVisible(false);
+                Nom_Joueur_Violet.setVisible(false);
+                LabelJViolet.setVisible(false);
+                Nom_Joueur_Cyan.setVisible(false);
+                LabelJCyan.setVisible(false);
+                Nom_Joueur_Blanc.setVisible(false);
+                LabelJBlanc.setVisible(false);
+                Btn_init1.setEnabled(false);
+                break;
+            case "3":
+                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
+                System.out.print(nbr_joueurs);
+                Panneau_joueurs.setVisible(true);
+                Nom_Joueur_Jaune.setVisible(false);
+                LabelJJaune.setVisible(false);
+                Nom_Joueur_Bleu.setVisible(false);
+                LabelJBleu.setVisible(false);
+                Nom_Joueur_Violet.setVisible(false);
+                LabelJViolet.setVisible(false);
+                Nom_Joueur_Cyan.setVisible(false);
+                LabelJCyan.setVisible(false);
+                Nom_Joueur_Blanc.setVisible(false);
+                LabelJBlanc.setVisible(false);
+                Btn_init1.setEnabled(false);
+                break;
+            case "4":
+                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
+                System.out.print(nbr_joueurs);
+                Panneau_joueurs.setVisible(true);
+                Nom_Joueur_Bleu.setVisible(false);
+                LabelJBleu.setVisible(false);
+                Nom_Joueur_Violet.setVisible(false);
+                LabelJViolet.setVisible(false);
+                Nom_Joueur_Cyan.setVisible(false);
+                LabelJCyan.setVisible(false);
+                Nom_Joueur_Blanc.setVisible(false);
+                LabelJBlanc.setVisible(false);
+                Btn_init1.setEnabled(false);
+                break;
+            case "5":
+                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
+                System.out.print(nbr_joueurs);
+                Panneau_joueurs.setVisible(true);
+                Nom_Joueur_Violet.setVisible(false);
+                LabelJViolet.setVisible(false);
+                Nom_Joueur_Cyan.setVisible(false);
+                LabelJCyan.setVisible(false);
+                Nom_Joueur_Blanc.setVisible(false);
+                LabelJBlanc.setVisible(false);
+                Btn_init1.setEnabled(false);
+                break;
+            case "6":
+                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
+                System.out.print(nbr_joueurs);
+                Panneau_joueurs.setVisible(true);
+                Nom_Joueur_Cyan.setVisible(false);
+                LabelJCyan.setVisible(false);
+                Nom_Joueur_Blanc.setVisible(false);
+                LabelJBlanc.setVisible(false);
+                Btn_init1.setEnabled(false);
+                break;
+            case "7":
+                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
+                System.out.print(nbr_joueurs);
+                Panneau_joueurs.setVisible(true);
+                Nom_Joueur_Blanc.setVisible(false);
+                LabelJBlanc.setVisible(false);
+                Btn_init1.setEnabled(false);
+                break;
+            case "8":
+                nbr_joueurs = Integer.valueOf(Nbr_Joueurs.getText());
+                System.out.print(nbr_joueurs);
+                Panneau_joueurs.setVisible(true);
+                Btn_init1.setEnabled(false);
+                break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_Btn_init1ActionPerformed
+
+    private void Btn_init2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_init2ActionPerformed
+        // TODO add your handling code here:
+        CartesJoueur.setVisible(true);
+        Pioche.setVisible(true);
+        
+        String nomJNoir = Nom_Joueur_Noir.getText();
+        Joueur JNoir = new Joueur(nomJNoir, "Noir");
+        
+        
+    }//GEN-LAST:event_Btn_init2ActionPerformed
+
+    private void Nom_Joueur_NoirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nom_Joueur_NoirActionPerformed
+        // Inutile
+    }//GEN-LAST:event_Nom_Joueur_NoirActionPerformed
+
+    private void Nom_Joueur_BlancActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nom_Joueur_BlancActionPerformed
+        // Inutile
+    }//GEN-LAST:event_Nom_Joueur_BlancActionPerformed
+
+    private void Nom_Joueur_VertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nom_Joueur_VertActionPerformed
+        // Inutile
+    }//GEN-LAST:event_Nom_Joueur_VertActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -251,6 +388,14 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JButton Btn_init1;
     private javax.swing.JButton Btn_init2;
     private javax.swing.JPanel CartesJoueur;
+    private javax.swing.JLabel LabelJBlanc;
+    private javax.swing.JLabel LabelJBleu;
+    private javax.swing.JLabel LabelJCyan;
+    private javax.swing.JLabel LabelJJaune;
+    private javax.swing.JLabel LabelJNoir;
+    private javax.swing.JLabel LabelJRouge;
+    private javax.swing.JLabel LabelJVert;
+    private javax.swing.JLabel LabelJViolet;
     private javax.swing.JTextField Nbr_Joueurs;
     private javax.swing.JTextField Nom_Joueur_Blanc;
     private javax.swing.JTextField Nom_Joueur_Bleu;
@@ -265,13 +410,5 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel Pioche;
     private javax.swing.JPanel PlateauJeu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
