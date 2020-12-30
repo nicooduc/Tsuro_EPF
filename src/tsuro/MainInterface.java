@@ -15,6 +15,7 @@ public class MainInterface extends javax.swing.JFrame {
     Plateau plateau = new Plateau(); // plateau de jeu
     Joueur joueurCourant;
     Joueur ListeJoueurs[] = new Joueur[8]; // tableau comprenant tout les joueurs (taille 0 à trouver comment modifier)
+    Pioche pioche = new Pioche();
     
     
     /**
@@ -259,33 +260,41 @@ public class MainInterface extends javax.swing.JFrame {
                 String nomJBlanc = Nom_Joueur_Blanc.getText();
                 Joueur JBlanc = new Joueur(nomJBlanc, "Blanc");
                 Nom_Joueur_Blanc.setEnabled(false);
+                ListeJoueurs[7] = JBlanc;
             case 7:
                 String nomJCyan = Nom_Joueur_Cyan.getText();
                 Joueur JCyan = new Joueur(nomJCyan, "Cyan");
                 Nom_Joueur_Cyan.setEnabled(false);
+                ListeJoueurs[6] = JCyan;
             case 6:
                 String nomJViolet = Nom_Joueur_Violet.getText();
                 Joueur JViolet = new Joueur(nomJViolet, "Violet");
                 Nom_Joueur_Violet.setEnabled(false);
+                ListeJoueurs[5] = JViolet;
             case 5:
                 String nomJBleu = Nom_Joueur_Bleu.getText();
                 Joueur JBleu = new Joueur(nomJBleu, "Bleu");
                 Nom_Joueur_Bleu.setEnabled(false);
+                ListeJoueurs[4] = JBleu;
             case 4:
                 String nomJJaune = Nom_Joueur_Jaune.getText();
                 Joueur JJaune = new Joueur(nomJJaune, "Jaune");
                 Nom_Joueur_Jaune.setEnabled(false);
+                ListeJoueurs[3] = JJaune;
             case 3:
                 String nomJVert = Nom_Joueur_Vert.getText();
                 Joueur JVert = new Joueur(nomJVert, "Vert");
                 Nom_Joueur_Vert.setEnabled(false);
+                ListeJoueurs[2] = JVert;
             case 2:
                 String nomJRouge = Nom_Joueur_Rouge.getText();
                 Joueur JRouge = new Joueur(nomJRouge, "Rouge");
                 Nom_Joueur_Rouge.setEnabled(false);
+                ListeJoueurs[1] = JRouge;
                 String nomJNoir = Nom_Joueur_Noir.getText();
                 Joueur JNoir = new Joueur(nomJNoir, "Noir");
                 Nom_Joueur_Noir.setEnabled(false);
+                ListeJoueurs[0] = JNoir;
                 Btn_init2.setEnabled(false);
                 break;
         }
@@ -340,7 +349,24 @@ public class MainInterface extends javax.swing.JFrame {
     }
     
     public void InitialiserPartie() {
-        
+        for (int pos = ListeJoueurs.length - 1; pos >= 1; pos--) { // mélange l'ordre des joueurs
+            //hasard reçoit un nombre entier aléatoire entre 0 et pos
+            int hasard = (int) Math.floor(Math.random() * (pos + 1));
+            //Echange
+            Joueur sauve = ListeJoueurs[pos];
+            ListeJoueurs[pos] = ListeJoueurs[hasard];
+            ListeJoueurs[hasard] = sauve;
+        }
+    }
+    
+    public void DistribuerCarte() {
+        for (int i = 0; i<8; i++) {
+            if (ListeJoueurs[i] != null) {
+                for (int j = 0; j<3; j++) {
+                    ListeJoueurs[i].PiocheCarte(pioche.PrendreCarte());
+                }
+            }
+        }
     }
     
     public void JoueurSuivant() {

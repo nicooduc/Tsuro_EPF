@@ -25,7 +25,16 @@ public class Pioche {
             Tuile sauve = TuilePioche[pos];
             TuilePioche[pos] = TuilePioche[hasard];
             TuilePioche[hasard] = sauve;
-
         }
+    }
+    
+    public Tuile PrendreCarte() {
+        int i = 0;
+        while (TuilePioche[i] == null) {
+            i++;
+        }
+        Tuile TuilePrise = TuilePioche[i];
+        TuilePioche[i] = null;
+        return TuilePrise;
     }
 }
