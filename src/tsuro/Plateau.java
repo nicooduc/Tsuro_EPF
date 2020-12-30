@@ -24,7 +24,7 @@ public class Plateau {
     public Plateau() {
         for (int i =0; i<6;i++) {
             for (int j = 0; j<6; j++) {
-                grilleTuile[i][j] = new Tuile(-1); //constructeur pr initialiser les cases en cases vides
+                    grilleTuile[i][j] = new Tuile(-1); //constructeur pr initialiser les cases en cases vides
             }
         }
     }

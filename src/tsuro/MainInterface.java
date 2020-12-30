@@ -5,17 +5,19 @@
  */
 package tsuro;
 
+import java.util.Random;
+
 /**
  *
  * @author nykol
  */
 public class MainInterface extends javax.swing.JFrame {
     
-    int nbr_joueurs; // a demander en début de partie
+    int nbr_joueurs; // nombre de joueurs
     Plateau plateau = new Plateau(); // plateau de jeu
     Joueur joueurCourant;
-    Joueur ListeJoueurs[] = new Joueur[8]; // tableau comprenant tout les joueurs (taille 0 à trouver comment modifier)
-    Pioche pioche = new Pioche();
+    Joueur ListeJoueurs[] = new Joueur[8]; // tableau comprenant tout les joueurs
+    Pioche pioche = new Pioche(); // pioche de cartes
     
     
     /**
@@ -41,13 +43,6 @@ public class MainInterface extends javax.swing.JFrame {
                 PlateauJeu.add(tuileGraph);
             }
         }
-        
-        /*for (int i = 0; i < 3; i++) { // en com le temps de créer le joueurCourant
-            TuileGraphique tuileGraph = new TuileGraphique(joueurCourant.TuileJ[i]);
-            CartesJoueur.add(tuileGraph);
-        }*/
-        
-        
     }
 
     /**
@@ -61,6 +56,9 @@ public class MainInterface extends javax.swing.JFrame {
 
         PlateauJeu = new javax.swing.JPanel();
         CartesJoueur = new javax.swing.JPanel();
+        Carte1_Joueur = new javax.swing.JButton();
+        Carte2_Joueur = new javax.swing.JButton();
+        Carte3_Joueur = new javax.swing.JButton();
         Panneau_start = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Nbr_Joueurs = new javax.swing.JTextField();
@@ -95,6 +93,9 @@ public class MainInterface extends javax.swing.JFrame {
         CartesJoueur.setBackground(new java.awt.Color(204, 255, 255));
         CartesJoueur.setPreferredSize(new java.awt.Dimension(390, 130));
         CartesJoueur.setLayout(new java.awt.GridLayout(1, 3));
+        CartesJoueur.add(Carte1_Joueur);
+        CartesJoueur.add(Carte2_Joueur);
+        CartesJoueur.add(Carte3_Joueur);
 
         Panneau_start.setBackground(new java.awt.Color(255, 255, 204));
         Panneau_start.setPreferredSize(new java.awt.Dimension(462, 130));
@@ -359,6 +360,9 @@ public class MainInterface extends javax.swing.JFrame {
         }
         
         DistribuerCarte();
+        Random random = new Random();
+        joueurCourant = ListeJoueurs[random.nextInt(8)];
+                
     }
     
     public void DistribuerCarte() {
@@ -387,6 +391,9 @@ public class MainInterface extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_init1;
     private javax.swing.JButton Btn_init2;
+    private javax.swing.JButton Carte1_Joueur;
+    private javax.swing.JButton Carte2_Joueur;
+    private javax.swing.JButton Carte3_Joueur;
     private javax.swing.JPanel CartesJoueur;
     private javax.swing.JLabel LabelJBlanc;
     private javax.swing.JLabel LabelJBleu;

@@ -94,6 +94,14 @@
         <Property name="columns" type="int" value="3"/>
         <Property name="rows" type="int" value="1"/>
       </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="Carte1_Joueur">
+        </Component>
+        <Component class="javax.swing.JButton" name="Carte2_Joueur">
+        </Component>
+        <Component class="javax.swing.JButton" name="Carte3_Joueur">
+        </Component>
+      </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="Panneau_start">
       <Properties>

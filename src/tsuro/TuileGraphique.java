@@ -66,6 +66,7 @@ public class TuileGraphique extends JButton {
         } else {
             int num_tile = TuileAssociee.IndexTuile;
             switch (num_tile) {
+                case 0 -> setIcon(Tile_0);
                 case 1 -> setIcon(Tile_1);
                 case 2 -> setIcon(Tile_2);
                 case 3 -> setIcon(Tile_3);
