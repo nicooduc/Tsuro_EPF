@@ -13,8 +13,9 @@ public class MainInterface extends javax.swing.JFrame {
     
     int nbr_joueurs; // a demander en début de partie
     Plateau plateau = new Plateau(); // plateau de jeu
-    Joueur ListeJoueurs[] = new Joueur[nbr_joueurs]; // tableau comprenant tout les joueurs
     Joueur joueurCourant;
+    Joueur ListeJoueurs[] = new Joueur[8]; // tableau comprenant tout les joueurs (taille 0 à trouver comment modifier)
+    
     
     /**
      * Creates new form MainInterface
@@ -22,7 +23,6 @@ public class MainInterface extends javax.swing.JFrame {
     public MainInterface() {
         initComponents();
         CartesJoueur.setVisible(false);
-        Pioche.setVisible(false);
         Panneau_joueurs.setVisible(false);
         
         for (int i = 0; i < 6; i++) {
@@ -59,7 +59,6 @@ public class MainInterface extends javax.swing.JFrame {
     private void initComponents() {
 
         PlateauJeu = new javax.swing.JPanel();
-        Pioche = new javax.swing.JPanel();
         CartesJoueur = new javax.swing.JPanel();
         Panneau_start = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -92,27 +91,23 @@ public class MainInterface extends javax.swing.JFrame {
         PlateauJeu.setRequestFocusEnabled(false);
         PlateauJeu.setLayout(new java.awt.GridLayout(6, 6));
 
-        Pioche.setBackground(new java.awt.Color(204, 255, 255));
-        Pioche.setPreferredSize(new java.awt.Dimension(130, 130));
-        Pioche.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         CartesJoueur.setBackground(new java.awt.Color(204, 255, 255));
         CartesJoueur.setPreferredSize(new java.awt.Dimension(390, 130));
         CartesJoueur.setLayout(new java.awt.GridLayout(1, 3));
 
         Panneau_start.setBackground(new java.awt.Color(255, 255, 204));
-        Panneau_start.setPreferredSize(new java.awt.Dimension(314, 130));
+        Panneau_start.setPreferredSize(new java.awt.Dimension(462, 130));
         Panneau_start.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Nombre de joueurs (2 à 8):");
-        Panneau_start.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
+        Panneau_start.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
         Nbr_Joueurs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nbr_JoueursActionPerformed(evt);
             }
         });
-        Panneau_start.add(Nbr_Joueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 30, -1));
+        Panneau_start.add(Nbr_Joueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 30, -1));
 
         Btn_init1.setText("GO !");
         Btn_init1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +115,7 @@ public class MainInterface extends javax.swing.JFrame {
                 Btn_init1ActionPerformed(evt);
             }
         });
-        Panneau_start.add(Btn_init1, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 73, 110, 40));
+        Panneau_start.add(Btn_init1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 110, 40));
 
         Panneau_joueurs.setBackground(new java.awt.Color(255, 255, 204));
         Panneau_joueurs.setPreferredSize(new java.awt.Dimension(462, 190));
@@ -191,20 +186,13 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(PlateauJeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CartesJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Panneau_joueurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Pioche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Panneau_start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Panneau_start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Panneau_joueurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(CartesJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,9 +200,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Pioche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Panneau_start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Panneau_start, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Panneau_joueurs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -267,8 +253,7 @@ public class MainInterface extends javax.swing.JFrame {
     private void Btn_init2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_init2ActionPerformed
         // TODO add your handling code here:
         CartesJoueur.setVisible(true);
-        Pioche.setVisible(true);
-        
+                
         switch(nbr_joueurs) { // récupération des noms des joueurs et création (pas de break pour dérouler la suite et éviter les répétitions)
             case 8:
                 String nomJBlanc = Nom_Joueur_Blanc.getText();
@@ -304,6 +289,7 @@ public class MainInterface extends javax.swing.JFrame {
                 Btn_init2.setEnabled(false);
                 break;
         }
+        InitialiserPartie();
     }//GEN-LAST:event_Btn_init2ActionPerformed
 
     private void Nom_Joueur_NoirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nom_Joueur_NoirActionPerformed
@@ -353,7 +339,22 @@ public class MainInterface extends javax.swing.JFrame {
         });
     }
     
-    // Fonctions à placer ici
+    public void InitialiserPartie() {
+        
+    }
+    
+    public void JoueurSuivant() {
+        int numJoueur = 0;
+        for (int i = 0; i<8; i++) {
+            if (ListeJoueurs[i] == joueurCourant) {
+                numJoueur = i;
+            }
+        }
+        while (ListeJoueurs[(numJoueur+1)%8] == null) {
+            numJoueur++;
+        }
+        joueurCourant = ListeJoueurs[(numJoueur+1)%8];
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_init1;
@@ -378,7 +379,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JTextField Nom_Joueur_Violet;
     private javax.swing.JPanel Panneau_joueurs;
     private javax.swing.JPanel Panneau_start;
-    private javax.swing.JPanel Pioche;
     private javax.swing.JPanel PlateauJeu;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
