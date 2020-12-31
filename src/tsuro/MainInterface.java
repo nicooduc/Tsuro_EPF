@@ -6,6 +6,7 @@
 package tsuro;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -54,6 +55,7 @@ public class MainInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton10 = new javax.swing.JButton();
         PlateauJeu = new javax.swing.JPanel();
         CartesJoueur = new javax.swing.JPanel();
         Carte1_Joueur = new javax.swing.JButton();
@@ -81,6 +83,8 @@ public class MainInterface extends javax.swing.JFrame {
         LabelJBlanc = new javax.swing.JLabel();
         Nom_Joueur_Blanc = new javax.swing.JTextField();
         Btn_init2 = new javax.swing.JButton();
+
+        jButton10.setText("jButton10");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1280, 800));
@@ -188,13 +192,12 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(PlateauJeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Panneau_start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Panneau_joueurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Panneau_start, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Panneau_joueurs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(CartesJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,8 +375,13 @@ public class MainInterface extends javax.swing.JFrame {
             ListeJoueurs[pos] = ListeJoueurs[hasard];
             ListeJoueurs[hasard] = sauve;
         }
+        for (int i = 0; i<8; i++) {
+            if (ListeJoueurs[i] != null) {
+                DistribuerCarte(i);
+                PositionnerPion(i);
+            }
+        }
         
-        DistribuerCarte();
         Random random = new Random();
         int Jdebut = random.nextInt(8);
         while (ListeJoueurs[Jdebut] == null) {
@@ -382,14 +390,19 @@ public class MainInterface extends javax.swing.JFrame {
         joueurCourant = ListeJoueurs[Jdebut];
     }
     
-    public void DistribuerCarte() {
-        for (int i = 0; i<8; i++) {
-            if (ListeJoueurs[i] != null) {
-                for (int j = 0; j<3; j++) {
-                    ListeJoueurs[i].PiocheCarte(pioche.PrendreCarte());
-                }
-            }
+    public void DistribuerCarte(int numJ) {
+        for (int j = 0; j<3; j++) {
+            ListeJoueurs[numJ].PiocheCarte(pioche.PrendreCarte());
         }
+    }
+    
+    public void PositionnerPion(int numJ) { // TROUEVR SOLUTION ATTRIBUER CASE INITIALE (bouton tout le tour ?)
+        System.out.println("Quel case voulez vous posez votre jeton ?");
+        Scanner sc = new Scanner(System.in);
+        Integer poscase = Integer.valueOf(sc.nextLine());
+        System.out.println("Quel position sur la case voulez vous le poser ?");
+        Integer postuile = Integer.valueOf(sc.nextLine());
+        ListeJoueurs[numJ].PionJ.placerPion(poscase, postuile);
     }
     
     public void JoueurSuivant() {
@@ -404,7 +417,7 @@ public class MainInterface extends javax.swing.JFrame {
         }
         joueurCourant = ListeJoueurs[(numJoueur+1)%8];
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_init1;
     private javax.swing.JButton Btn_init2;
@@ -432,6 +445,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel Panneau_joueurs;
     private javax.swing.JPanel Panneau_start;
     private javax.swing.JPanel PlateauJeu;
+    private javax.swing.JButton jButton10;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

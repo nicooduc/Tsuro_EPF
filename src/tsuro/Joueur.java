@@ -15,11 +15,12 @@ public class Joueur {
     String Couleur; //couleur joueur
     Tuile[] TuileJ = new Tuile[3]; //place main de tuiles du joueur
     int nbrTour = 0;
+    Pion PionJ;
     
     public Joueur(String nom, String couleur) {
         Nom = nom;
         Couleur = couleur;
-        Pion PionJ = new Pion(Couleur); //pion joueur
+        PionJ = new Pion(Couleur); //pion joueur
     }
     
     public void TourPasse() {
