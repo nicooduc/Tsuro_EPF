@@ -393,14 +393,18 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void RotationCarte1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte1ActionPerformed
         joueurCourant.TuileJ[0].RotationTuile();
+        CartesJoueur.repaint();
+        System.out.println("ok");
     }//GEN-LAST:event_RotationCarte1ActionPerformed
 
     private void RotationCarte2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte2ActionPerformed
         joueurCourant.TuileJ[1].RotationTuile();
+        CartesJoueur.repaint();
     }//GEN-LAST:event_RotationCarte2ActionPerformed
 
     private void RotationCarte3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte3ActionPerformed
         joueurCourant.TuileJ[2].RotationTuile();
+        CartesJoueur.repaint();
     }//GEN-LAST:event_RotationCarte3ActionPerformed
 
     /**
