@@ -38,4 +38,12 @@ public class Joueur {
         TuileJ[i] = tuilepioche;
         return true;
     }
+    
+    public void JouerCarte(Tuile tuilejouee) {
+        int i = 0;
+        while (tuilejouee != TuileJ[i]) {
+            i++;
+        }
+        TuileJ[i] = null;
+    }
 }

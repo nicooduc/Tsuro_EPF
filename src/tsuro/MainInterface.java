@@ -5,6 +5,9 @@
  */
 package tsuro;
 
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -19,6 +22,7 @@ public class MainInterface extends javax.swing.JFrame {
     Joueur joueurCourant;
     Joueur ListeJoueurs[] = new Joueur[8]; // tableau comprenant tout les joueurs
     Pioche pioche = new Pioche(); // pioche de cartes
+    Tuile carteselect;
     
     
     /**
@@ -36,7 +40,11 @@ public class MainInterface extends javax.swing.JFrame {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         Tuile t = tuileGraph.TuileAssociee;
                         
-                        // actions à réaliser lorsque une case de la grille est activées à placer ici
+                        if (t.IndexTuile != -1) { // Si tuile déjà présente sur la case, ne rien faire
+                            return;
+                        } else {
+                            
+                        }
                         
                         PlateauJeu.repaint(); // mettre a jour le plateau de jeu
                     }
@@ -58,8 +66,11 @@ public class MainInterface extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         PlateauJeu = new javax.swing.JPanel();
         CartesJoueur = new javax.swing.JPanel();
+        RotationCarte1 = new javax.swing.JButton();
         Carte1_Joueur = new javax.swing.JButton();
+        RotationCarte2 = new javax.swing.JButton();
         Carte2_Joueur = new javax.swing.JButton();
+        RotationCarte3 = new javax.swing.JButton();
         Carte3_Joueur = new javax.swing.JButton();
         Panneau_start = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -95,29 +106,59 @@ public class MainInterface extends javax.swing.JFrame {
         PlateauJeu.setLayout(new java.awt.GridLayout(6, 6));
 
         CartesJoueur.setBackground(new java.awt.Color(204, 255, 255));
-        CartesJoueur.setPreferredSize(new java.awt.Dimension(390, 130));
-        CartesJoueur.setLayout(new java.awt.GridLayout(1, 3));
+        CartesJoueur.setPreferredSize(new java.awt.Dimension(390, 150));
+        CartesJoueur.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        RotationCarte1.setText("Rotation");
+        RotationCarte1.setPreferredSize(new java.awt.Dimension(130, 20));
+        RotationCarte1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RotationCarte1ActionPerformed(evt);
+            }
+        });
+        CartesJoueur.add(RotationCarte1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 20));
+
+        Carte1_Joueur.setPreferredSize(new java.awt.Dimension(130, 130));
         Carte1_Joueur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte1_JoueurActionPerformed(evt);
             }
         });
-        CartesJoueur.add(Carte1_Joueur);
+        CartesJoueur.add(Carte1_Joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 130, 130));
 
+        RotationCarte2.setText("Rotation");
+        RotationCarte2.setPreferredSize(new java.awt.Dimension(130, 20));
+        RotationCarte2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RotationCarte2ActionPerformed(evt);
+            }
+        });
+        CartesJoueur.add(RotationCarte2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, 20));
+
+        Carte2_Joueur.setPreferredSize(new java.awt.Dimension(130, 130));
         Carte2_Joueur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte2_JoueurActionPerformed(evt);
             }
         });
-        CartesJoueur.add(Carte2_Joueur);
+        CartesJoueur.add(Carte2_Joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, 130));
 
+        RotationCarte3.setText("Rotation");
+        RotationCarte3.setPreferredSize(new java.awt.Dimension(130, 20));
+        RotationCarte3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RotationCarte3ActionPerformed(evt);
+            }
+        });
+        CartesJoueur.add(RotationCarte3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 130, 20));
+
+        Carte3_Joueur.setPreferredSize(new java.awt.Dimension(130, 130));
         Carte3_Joueur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte3_JoueurActionPerformed(evt);
             }
         });
-        CartesJoueur.add(Carte3_Joueur);
+        CartesJoueur.add(Carte3_Joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 130, 130));
 
         Panneau_start.setBackground(new java.awt.Color(255, 255, 204));
         Panneau_start.setPreferredSize(new java.awt.Dimension(462, 130));
@@ -337,16 +378,28 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_Nom_Joueur_VertActionPerformed
 
     private void Carte1_JoueurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte1_JoueurActionPerformed
-        joueurCourant.TuileJ[0].RotationTuile();
+        carteselect = joueurCourant.TuileJ[0];
     }//GEN-LAST:event_Carte1_JoueurActionPerformed
 
     private void Carte2_JoueurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte2_JoueurActionPerformed
-        joueurCourant.TuileJ[1].RotationTuile();
+        carteselect = joueurCourant.TuileJ[1];
     }//GEN-LAST:event_Carte2_JoueurActionPerformed
 
     private void Carte3_JoueurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte3_JoueurActionPerformed
-        joueurCourant.TuileJ[2].RotationTuile();
+        carteselect = joueurCourant.TuileJ[2];
     }//GEN-LAST:event_Carte3_JoueurActionPerformed
+
+    private void RotationCarte1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte1ActionPerformed
+        joueurCourant.TuileJ[0].RotationTuile();
+    }//GEN-LAST:event_RotationCarte1ActionPerformed
+
+    private void RotationCarte2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte2ActionPerformed
+        joueurCourant.TuileJ[1].RotationTuile();
+    }//GEN-LAST:event_RotationCarte2ActionPerformed
+
+    private void RotationCarte3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte3ActionPerformed
+        joueurCourant.TuileJ[2].RotationTuile();
+    }//GEN-LAST:event_RotationCarte3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,12 +437,24 @@ public class MainInterface extends javax.swing.JFrame {
     }
     
     public void TourDeJeu() {
-        String carte1 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[0].IndexTuile + ".png";
-        Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte1)));
-        String carte2 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[1].IndexTuile + ".png";
-        Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte2)));
-        String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + ".png";
-        Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte3)));
+        if (joueurCourant.TuileJ[0] != null) {
+            String carte1 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[0].IndexTuile + ".png";
+            Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte1)));
+        } else {
+            Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
+        }
+        if (joueurCourant.TuileJ[1] != null) {
+            String carte2 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[1].IndexTuile + ".png";
+            Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte2)));
+        } else {
+            Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
+        }
+        if (joueurCourant.TuileJ[2] != null) {
+            String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + ".png";
+            Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte3)));
+        } else {
+            Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
+        }
     }
     
     public void InitialiserPartie() {
@@ -475,6 +540,9 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel Panneau_joueurs;
     private javax.swing.JPanel Panneau_start;
     private javax.swing.JPanel PlateauJeu;
+    private javax.swing.JButton RotationCarte1;
+    private javax.swing.JButton RotationCarte2;
+    private javax.swing.JButton RotationCarte3;
     private javax.swing.JButton jButton10;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
