@@ -22,6 +22,11 @@ public class Tuile {
         rotation = (rotation + 1)%4 ;
     }
     
+    
+    
+    
+    
+    
     public int[] tile0() {
         int[] tab0 = {7,4,6,2,8,3,1,5};
         return tab0;

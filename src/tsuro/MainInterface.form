@@ -101,10 +101,19 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JButton" name="Carte1_Joueur">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Carte1_JoueurActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Carte2_Joueur">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Carte2_JoueurActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Carte3_Joueur">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Carte3_JoueurActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

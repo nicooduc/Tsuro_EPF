@@ -97,8 +97,26 @@ public class MainInterface extends javax.swing.JFrame {
         CartesJoueur.setBackground(new java.awt.Color(204, 255, 255));
         CartesJoueur.setPreferredSize(new java.awt.Dimension(390, 130));
         CartesJoueur.setLayout(new java.awt.GridLayout(1, 3));
+
+        Carte1_Joueur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Carte1_JoueurActionPerformed(evt);
+            }
+        });
         CartesJoueur.add(Carte1_Joueur);
+
+        Carte2_Joueur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Carte2_JoueurActionPerformed(evt);
+            }
+        });
         CartesJoueur.add(Carte2_Joueur);
+
+        Carte3_Joueur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Carte3_JoueurActionPerformed(evt);
+            }
+        });
         CartesJoueur.add(Carte3_Joueur);
 
         Panneau_start.setBackground(new java.awt.Color(255, 255, 204));
@@ -317,6 +335,18 @@ public class MainInterface extends javax.swing.JFrame {
     private void Nom_Joueur_VertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nom_Joueur_VertActionPerformed
         // Inutile
     }//GEN-LAST:event_Nom_Joueur_VertActionPerformed
+
+    private void Carte1_JoueurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte1_JoueurActionPerformed
+        joueurCourant.TuileJ[0].RotationTuile();
+    }//GEN-LAST:event_Carte1_JoueurActionPerformed
+
+    private void Carte2_JoueurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte2_JoueurActionPerformed
+        joueurCourant.TuileJ[1].RotationTuile();
+    }//GEN-LAST:event_Carte2_JoueurActionPerformed
+
+    private void Carte3_JoueurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte3_JoueurActionPerformed
+        joueurCourant.TuileJ[2].RotationTuile();
+    }//GEN-LAST:event_Carte3_JoueurActionPerformed
 
     /**
      * @param args the command line arguments
