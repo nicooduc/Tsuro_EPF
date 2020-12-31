@@ -46,6 +46,9 @@ public class MainInterface extends javax.swing.JFrame {
                             t.rotation = carteselect.rotation;
                             joueurCourant.JouerCarte(carteselect);
                             carteselect = null;
+                            JoueurSuivant();
+                            DeplacementPions(/*récupérer tuile jouée*/);
+                            AffTuilesJ(); // calcul déplacement a faire
                         }
                         
                         PlateauJeu.repaint(); // mettre a jour le plateau de jeu
@@ -364,7 +367,7 @@ public class MainInterface extends javax.swing.JFrame {
                 break;
         }
         InitialiserPartie();
-        TourDeJeu();
+        AffTuilesJ();
     }//GEN-LAST:event_Btn_init2ActionPerformed
 
     private void Nom_Joueur_NoirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nom_Joueur_NoirActionPerformed
@@ -444,7 +447,17 @@ public class MainInterface extends javax.swing.JFrame {
         });
     }
     
-    public void TourDeJeu() {
+    public void DeplacementPions(int placeTuile) {
+        for (int i = 0; i<8; i++) {
+            if (ListeJoueurs[i] != null) {
+                if (ListeJoueurs[i].PionJ.positionCase == placeTuile) {
+                    //déplacement a travers la tuile a faire + vérifier si tuiles adjacentes ou sortie plateau
+                }
+            }
+        }
+    }
+    
+    public void AffTuilesJ() {
         if (joueurCourant.TuileJ[0] != null) {
             String carte1 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[0].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
             Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte1)));
