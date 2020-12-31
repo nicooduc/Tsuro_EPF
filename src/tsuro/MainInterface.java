@@ -393,18 +393,20 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void RotationCarte1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte1ActionPerformed
         joueurCourant.TuileJ[0].RotationTuile();
-        CartesJoueur.repaint();
-        System.out.println("ok");
+        String carte1 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[0].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
+        Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte1)));
     }//GEN-LAST:event_RotationCarte1ActionPerformed
 
     private void RotationCarte2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte2ActionPerformed
         joueurCourant.TuileJ[1].RotationTuile();
-        CartesJoueur.repaint();
+        String carte2 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[1].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
+        Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte2)));
     }//GEN-LAST:event_RotationCarte2ActionPerformed
 
     private void RotationCarte3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte3ActionPerformed
         joueurCourant.TuileJ[2].RotationTuile();
-        CartesJoueur.repaint();
+        String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
+        Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte3)));
     }//GEN-LAST:event_RotationCarte3ActionPerformed
 
     /**
