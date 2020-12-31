@@ -179,245 +179,245 @@ public class TuileGraphique extends JButton {
                         case 90 -> setIcon(Tile_0_90);
                         case 180 -> setIcon(Tile_0_180);
                         case 270 -> setIcon(Tile_0_270);
-                    }
+                    } break;
                 case 1 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_1_0);
                         case 90 -> setIcon(Tile_1_90);
                         case 180 -> setIcon(Tile_1_180);
                         case 270 -> setIcon(Tile_1_270);
-                    }
+                    } break;
                 case 2 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_2_0);
                         case 90 -> setIcon(Tile_2_90);
                         case 180 -> setIcon(Tile_2_180);
                         case 270 -> setIcon(Tile_2_270);
-                        }
+                    } break;
                 case 3 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_3_0);
                         case 90 -> setIcon(Tile_3_90);
                         case 180 -> setIcon(Tile_3_180);
                         case 270 -> setIcon(Tile_3_270);
-                        }
+                    } break;
                 case 4 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_4_0);
                         case 90 -> setIcon(Tile_4_90);
                         case 180 -> setIcon(Tile_4_180);
                         case 270 -> setIcon(Tile_4_270);
-                        }
+                    } break;
                 case 5 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_5_0);
                         case 90 -> setIcon(Tile_5_90);
                         case 180 -> setIcon(Tile_5_180);
                         case 270 -> setIcon(Tile_5_270);
-                        }
+                    } break;
                 case 6 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_6_0);
                         case 90 -> setIcon(Tile_6_90);
                         case 180 -> setIcon(Tile_6_180);
                         case 270 -> setIcon(Tile_6_270);
-                        }
+                    } break;
                 case 7 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_7_0);
                         case 90 -> setIcon(Tile_7_90);
                         case 180 -> setIcon(Tile_7_180);
                         case 270 -> setIcon(Tile_7_270);
-                        }
+                    } break;
                 case 8 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_8_0);
                         case 90 -> setIcon(Tile_8_90);
                         case 180 -> setIcon(Tile_8_180);
                         case 270 -> setIcon(Tile_8_270);
-                        }
+                    } break;
                 case 9 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_9_0);
                         case 90 -> setIcon(Tile_9_90);
                         case 180 -> setIcon(Tile_9_180);
                         case 270 -> setIcon(Tile_9_270);
-                        }
+                    } break;
                 case 10 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_10_0);
                         case 90 -> setIcon(Tile_10_90);
                         case 180 -> setIcon(Tile_10_180);
                         case 270 -> setIcon(Tile_10_270);
-                        }
+                    } break;
                 case 11 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_11_0);
                         case 90 -> setIcon(Tile_11_90);
                         case 180 -> setIcon(Tile_11_180);
                         case 270 -> setIcon(Tile_11_270);
-                        }
+                    } break;
                 case 12 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_12_0);
                         case 90 -> setIcon(Tile_12_90);
                         case 180 -> setIcon(Tile_12_180);
                         case 270 -> setIcon(Tile_12_270);
-                        }
+                    } break;
                 case 13 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_13_0);
                         case 90 -> setIcon(Tile_13_90);
                         case 180 -> setIcon(Tile_13_180);
                         case 270 -> setIcon(Tile_13_270);
-                        }
+                    } break;
                 case 14 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_14_0);
                         case 90 -> setIcon(Tile_14_90);
                         case 180 -> setIcon(Tile_14_180);
                         case 270 -> setIcon(Tile_14_270);
-                        }
+                    } break;
                 case 15 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_15_0);
                         case 90 -> setIcon(Tile_15_90);
                         case 180 -> setIcon(Tile_15_180);
                         case 270 -> setIcon(Tile_15_270);
-                        }
+                    } break;
                 case 16 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_16_0);
                         case 90 -> setIcon(Tile_16_90);
                         case 180 -> setIcon(Tile_16_180);
                         case 270 -> setIcon(Tile_16_270);
-                        }
+                    } break;
                 case 17 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_17_0);
                         case 90 -> setIcon(Tile_17_90);
                         case 180 -> setIcon(Tile_17_180);
                         case 270 -> setIcon(Tile_17_270);
-                        }
+                    } break;
                 case 18 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_18_0);
                         case 90 -> setIcon(Tile_18_90);
                         case 180 -> setIcon(Tile_18_180);
                         case 270 -> setIcon(Tile_18_270);
-                        }
+                    } break;
                 case 19 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_19_0);
                         case 90 -> setIcon(Tile_19_90);
                         case 180 -> setIcon(Tile_19_180);
                         case 270 -> setIcon(Tile_19_270);
-                        }
+                    } break;
                 case 20 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_20_0);
                         case 90 -> setIcon(Tile_20_90);
                         case 180 -> setIcon(Tile_20_180);
                         case 270 -> setIcon(Tile_20_270);
-                        }
+                    } break;
                 case 21 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_21_0);
                         case 90 -> setIcon(Tile_21_90);
                         case 180 -> setIcon(Tile_21_180);
                         case 270 -> setIcon(Tile_21_270);
-                        }
+                    } break;
                 case 22 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_22_0);
                         case 90 -> setIcon(Tile_22_90);
                         case 180 -> setIcon(Tile_22_180);
                         case 270 -> setIcon(Tile_22_270);
-                        }
+                    } break;
                 case 23 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_23_0);
                         case 90 -> setIcon(Tile_23_90);
                         case 180 -> setIcon(Tile_23_180);
                         case 270 -> setIcon(Tile_23_270);
-                        }
+                    } break;
                 case 24 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_24_0);
                         case 90 -> setIcon(Tile_24_90);
                         case 180 -> setIcon(Tile_24_180);
                         case 270 -> setIcon(Tile_24_270);
-                        }
+                    } break;
                 case 25 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_25_0);
                         case 90 -> setIcon(Tile_25_90);
                         case 180 -> setIcon(Tile_25_180);
                         case 270 -> setIcon(Tile_25_270);
-                        }
+                    } break;
                 case 26 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_26_0);
                         case 90 -> setIcon(Tile_26_90);
                         case 180 -> setIcon(Tile_26_180);
                         case 270 -> setIcon(Tile_26_270);
-                        }
+                    } break;
                 case 27 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_27_0);
                         case 90 -> setIcon(Tile_27_90);
                         case 180 -> setIcon(Tile_27_180);
                         case 270 -> setIcon(Tile_27_270);
-                        }
+                    } break;
                 case 28 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_28_0);
                         case 90 -> setIcon(Tile_28_90);
                         case 180 -> setIcon(Tile_28_180);
                         case 270 -> setIcon(Tile_28_270);
-                        }
+                    } break;
                 case 29 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_29_0);
                         case 90 -> setIcon(Tile_29_90);
                         case 180 -> setIcon(Tile_29_180);
                         case 270 -> setIcon(Tile_29_270);
-                        }
+                    } break;
                 case 30 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_30_0);
                         case 90 -> setIcon(Tile_30_90);
                         case 180 -> setIcon(Tile_30_180);
                         case 270 -> setIcon(Tile_30_270);
-                        }
+                    } break;
                 case 31 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_31_0);
                         case 90 -> setIcon(Tile_31_90);
                         case 180 -> setIcon(Tile_31_180);
                         case 270 -> setIcon(Tile_31_270);
-                        }
+                    } break;
                 case 32 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_32_0);
                         case 90 -> setIcon(Tile_32_90);
                         case 180 -> setIcon(Tile_32_180);
                         case 270 -> setIcon(Tile_32_270);
-                        }
+                    } break;
                 case 33 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_33_0);
                         case 90 -> setIcon(Tile_33_90);
                         case 180 -> setIcon(Tile_33_180);
                         case 270 -> setIcon(Tile_33_270);
-                        }
+                    } break;
                 case 34 :
                     switch (rot_tile) {
                         case 0 -> setIcon(Tile_34_0);
                         case 90 -> setIcon(Tile_34_90);
                         case 180 -> setIcon(Tile_34_180);
                         case 270 -> setIcon(Tile_34_270);
-                        }
+                    } break;
             }
         }
     }
