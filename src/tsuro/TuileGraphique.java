@@ -171,42 +171,253 @@ public class TuileGraphique extends JButton {
             setIcon(Tile_Vide);
         } else {
             int num_tile = TuileAssociee.IndexTuile;
+            int rot_tile = TuileAssociee.rotation;
             switch (num_tile) {
-                case 0 -> setIcon(Tile_0_0);
-                case 1 -> setIcon(Tile_1_0);
-                case 2 -> setIcon(Tile_2_0);
-                case 3 -> setIcon(Tile_3_0);
-                case 4 -> setIcon(Tile_4_0);
-                case 5 -> setIcon(Tile_5_0);
-                case 6 -> setIcon(Tile_6_0);
-                case 7 -> setIcon(Tile_7_0);
-                case 8 -> setIcon(Tile_8_0);
-                case 9 -> setIcon(Tile_9_0);
-                case 10 -> setIcon(Tile_10_0);
-                case 11 -> setIcon(Tile_11_0);
-                case 12 -> setIcon(Tile_12_0);
-                case 13 -> setIcon(Tile_13_0);
-                case 14 -> setIcon(Tile_14_0);
-                case 15 -> setIcon(Tile_15_0);
-                case 16 -> setIcon(Tile_16_0);
-                case 17 -> setIcon(Tile_17_0);
-                case 18 -> setIcon(Tile_18_0);
-                case 19 -> setIcon(Tile_19_0);
-                case 20 -> setIcon(Tile_20_0);
-                case 21 -> setIcon(Tile_21_0);
-                case 22 -> setIcon(Tile_22_0);
-                case 23 -> setIcon(Tile_23_0);
-                case 24 -> setIcon(Tile_24_0);
-                case 25 -> setIcon(Tile_25_0);
-                case 26 -> setIcon(Tile_26_0);
-                case 27 -> setIcon(Tile_27_0);
-                case 28 -> setIcon(Tile_28_0);
-                case 29 -> setIcon(Tile_29_0);
-                case 30 -> setIcon(Tile_30_0);
-                case 31 -> setIcon(Tile_31_0);
-                case 32 -> setIcon(Tile_32_0);
-                case 33 -> setIcon(Tile_33_0);
-                case 34 -> setIcon(Tile_34_0);                
+                case 0 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_0_0);
+                        case 90 -> setIcon(Tile_0_90);
+                        case 180 -> setIcon(Tile_0_180);
+                        case 270 -> setIcon(Tile_0_270);
+                    }
+                case 1 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_1_0);
+                        case 90 -> setIcon(Tile_1_90);
+                        case 180 -> setIcon(Tile_1_180);
+                        case 270 -> setIcon(Tile_1_270);
+                    }
+                case 2 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_2_0);
+                        case 90 -> setIcon(Tile_2_90);
+                        case 180 -> setIcon(Tile_2_180);
+                        case 270 -> setIcon(Tile_2_270);
+                        }
+                case 3 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_3_0);
+                        case 90 -> setIcon(Tile_3_90);
+                        case 180 -> setIcon(Tile_3_180);
+                        case 270 -> setIcon(Tile_3_270);
+                        }
+                case 4 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_4_0);
+                        case 90 -> setIcon(Tile_4_90);
+                        case 180 -> setIcon(Tile_4_180);
+                        case 270 -> setIcon(Tile_4_270);
+                        }
+                case 5 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_5_0);
+                        case 90 -> setIcon(Tile_5_90);
+                        case 180 -> setIcon(Tile_5_180);
+                        case 270 -> setIcon(Tile_5_270);
+                        }
+                case 6 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_6_0);
+                        case 90 -> setIcon(Tile_6_90);
+                        case 180 -> setIcon(Tile_6_180);
+                        case 270 -> setIcon(Tile_6_270);
+                        }
+                case 7 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_7_0);
+                        case 90 -> setIcon(Tile_7_90);
+                        case 180 -> setIcon(Tile_7_180);
+                        case 270 -> setIcon(Tile_7_270);
+                        }
+                case 8 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_8_0);
+                        case 90 -> setIcon(Tile_8_90);
+                        case 180 -> setIcon(Tile_8_180);
+                        case 270 -> setIcon(Tile_8_270);
+                        }
+                case 9 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_9_0);
+                        case 90 -> setIcon(Tile_9_90);
+                        case 180 -> setIcon(Tile_9_180);
+                        case 270 -> setIcon(Tile_9_270);
+                        }
+                case 10 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_10_0);
+                        case 90 -> setIcon(Tile_10_90);
+                        case 180 -> setIcon(Tile_10_180);
+                        case 270 -> setIcon(Tile_10_270);
+                        }
+                case 11 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_11_0);
+                        case 90 -> setIcon(Tile_11_90);
+                        case 180 -> setIcon(Tile_11_180);
+                        case 270 -> setIcon(Tile_11_270);
+                        }
+                case 12 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_12_0);
+                        case 90 -> setIcon(Tile_12_90);
+                        case 180 -> setIcon(Tile_12_180);
+                        case 270 -> setIcon(Tile_12_270);
+                        }
+                case 13 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_13_0);
+                        case 90 -> setIcon(Tile_13_90);
+                        case 180 -> setIcon(Tile_13_180);
+                        case 270 -> setIcon(Tile_13_270);
+                        }
+                case 14 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_14_0);
+                        case 90 -> setIcon(Tile_14_90);
+                        case 180 -> setIcon(Tile_14_180);
+                        case 270 -> setIcon(Tile_14_270);
+                        }
+                case 15 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_15_0);
+                        case 90 -> setIcon(Tile_15_90);
+                        case 180 -> setIcon(Tile_15_180);
+                        case 270 -> setIcon(Tile_15_270);
+                        }
+                case 16 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_16_0);
+                        case 90 -> setIcon(Tile_16_90);
+                        case 180 -> setIcon(Tile_16_180);
+                        case 270 -> setIcon(Tile_16_270);
+                        }
+                case 17 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_17_0);
+                        case 90 -> setIcon(Tile_17_90);
+                        case 180 -> setIcon(Tile_17_180);
+                        case 270 -> setIcon(Tile_17_270);
+                        }
+                case 18 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_18_0);
+                        case 90 -> setIcon(Tile_18_90);
+                        case 180 -> setIcon(Tile_18_180);
+                        case 270 -> setIcon(Tile_18_270);
+                        }
+                case 19 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_19_0);
+                        case 90 -> setIcon(Tile_19_90);
+                        case 180 -> setIcon(Tile_19_180);
+                        case 270 -> setIcon(Tile_19_270);
+                        }
+                case 20 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_20_0);
+                        case 90 -> setIcon(Tile_20_90);
+                        case 180 -> setIcon(Tile_20_180);
+                        case 270 -> setIcon(Tile_20_270);
+                        }
+                case 21 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_21_0);
+                        case 90 -> setIcon(Tile_21_90);
+                        case 180 -> setIcon(Tile_21_180);
+                        case 270 -> setIcon(Tile_21_270);
+                        }
+                case 22 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_22_0);
+                        case 90 -> setIcon(Tile_22_90);
+                        case 180 -> setIcon(Tile_22_180);
+                        case 270 -> setIcon(Tile_22_270);
+                        }
+                case 23 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_23_0);
+                        case 90 -> setIcon(Tile_23_90);
+                        case 180 -> setIcon(Tile_23_180);
+                        case 270 -> setIcon(Tile_23_270);
+                        }
+                case 24 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_24_0);
+                        case 90 -> setIcon(Tile_24_90);
+                        case 180 -> setIcon(Tile_24_180);
+                        case 270 -> setIcon(Tile_24_270);
+                        }
+                case 25 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_25_0);
+                        case 90 -> setIcon(Tile_25_90);
+                        case 180 -> setIcon(Tile_25_180);
+                        case 270 -> setIcon(Tile_25_270);
+                        }
+                case 26 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_26_0);
+                        case 90 -> setIcon(Tile_26_90);
+                        case 180 -> setIcon(Tile_26_180);
+                        case 270 -> setIcon(Tile_26_270);
+                        }
+                case 27 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_27_0);
+                        case 90 -> setIcon(Tile_27_90);
+                        case 180 -> setIcon(Tile_27_180);
+                        case 270 -> setIcon(Tile_27_270);
+                        }
+                case 28 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_28_0);
+                        case 90 -> setIcon(Tile_28_90);
+                        case 180 -> setIcon(Tile_28_180);
+                        case 270 -> setIcon(Tile_28_270);
+                        }
+                case 29 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_29_0);
+                        case 90 -> setIcon(Tile_29_90);
+                        case 180 -> setIcon(Tile_29_180);
+                        case 270 -> setIcon(Tile_29_270);
+                        }
+                case 30 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_30_0);
+                        case 90 -> setIcon(Tile_30_90);
+                        case 180 -> setIcon(Tile_30_180);
+                        case 270 -> setIcon(Tile_30_270);
+                        }
+                case 31 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_31_0);
+                        case 90 -> setIcon(Tile_31_90);
+                        case 180 -> setIcon(Tile_31_180);
+                        case 270 -> setIcon(Tile_31_270);
+                        }
+                case 32 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_32_0);
+                        case 90 -> setIcon(Tile_32_90);
+                        case 180 -> setIcon(Tile_32_180);
+                        case 270 -> setIcon(Tile_32_270);
+                        }
+                case 33 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_33_0);
+                        case 90 -> setIcon(Tile_33_90);
+                        case 180 -> setIcon(Tile_33_180);
+                        case 270 -> setIcon(Tile_33_270);
+                        }
+                case 34 :
+                    switch (rot_tile) {
+                        case 0 -> setIcon(Tile_34_0);
+                        case 90 -> setIcon(Tile_34_90);
+                        case 180 -> setIcon(Tile_34_180);
+                        case 270 -> setIcon(Tile_34_270);
+                        }
             }
         }
     }
