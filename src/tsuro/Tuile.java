@@ -19,7 +19,7 @@ public class Tuile {
     }
     
     public void RotationTuile() {
-        rotation = (rotation + 1)%4 ;
+        rotation = (rotation + 90)%360 ;
     }
     
     

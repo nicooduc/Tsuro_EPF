@@ -5,9 +5,6 @@
  */
 package tsuro;
 
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -42,8 +39,13 @@ public class MainInterface extends javax.swing.JFrame {
                         
                         if (t.IndexTuile != -1) { // Si tuile déjà présente sur la case, ne rien faire
                             return;
+                        } else if (carteselect == null) {
+                            return;
                         } else {
-                            
+                            t.IndexTuile = carteselect.IndexTuile;
+                            t.rotation = carteselect.rotation;
+                            joueurCourant.JouerCarte(carteselect);
+                            carteselect = null;
                         }
                         
                         PlateauJeu.repaint(); // mettre a jour le plateau de jeu
@@ -438,19 +440,19 @@ public class MainInterface extends javax.swing.JFrame {
     
     public void TourDeJeu() {
         if (joueurCourant.TuileJ[0] != null) {
-            String carte1 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[0].IndexTuile + ".png";
+            String carte1 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[0].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
             Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte1)));
         } else {
             Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
         }
         if (joueurCourant.TuileJ[1] != null) {
-            String carte2 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[1].IndexTuile + ".png";
+            String carte2 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[1].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
             Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte2)));
         } else {
             Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
         }
         if (joueurCourant.TuileJ[2] != null) {
-            String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + ".png";
+            String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
             Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte3)));
         } else {
             Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
