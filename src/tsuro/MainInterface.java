@@ -300,6 +300,7 @@ public class MainInterface extends javax.swing.JFrame {
                 break;
         }
         InitialiserPartie();
+        TourDeJeu();
     }//GEN-LAST:event_Btn_init2ActionPerformed
 
     private void Nom_Joueur_NoirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nom_Joueur_NoirActionPerformed
@@ -349,7 +350,20 @@ public class MainInterface extends javax.swing.JFrame {
         });
     }
     
+    public void TourDeJeu() {
+        String carte1 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[0].IndexTuile + ".png";
+        Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte1)));
+        String carte2 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[1].IndexTuile + ".png";
+        Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte2)));
+        String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + ".png";
+        Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte3)));
+    }
+    
     public void InitialiserPartie() {
+        Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
+        Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
+        Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
+        
         for (int pos = ListeJoueurs.length - 1; pos >= 1; pos--) { // mélange l'ordre des joueurs
             //hasard reçoit un nombre entier aléatoire entre 0 et pos
             int hasard = (int) Math.floor(Math.random() * (pos + 1));
@@ -361,11 +375,11 @@ public class MainInterface extends javax.swing.JFrame {
         
         DistribuerCarte();
         Random random = new Random();
-        joueurCourant = ListeJoueurs[random.nextInt(8)];
-        
-        Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
-        Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
-        Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
+        int Jdebut = random.nextInt(8);
+        while (ListeJoueurs[Jdebut] == null) {
+            Jdebut = (Jdebut + 1)%8;
+        }
+        joueurCourant = ListeJoueurs[Jdebut];
     }
     
     public void DistribuerCarte() {

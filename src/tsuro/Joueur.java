@@ -34,6 +34,7 @@ public class Joueur {
                 return false;
             }
         }
+        TuileJ[i] = tuilepioche;
         return true;
     }
 }
