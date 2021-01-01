@@ -15,7 +15,7 @@ public class Pioche {
 
     public Pioche() {
         for (int i = 0; i < 35; i++) {
-            TuilePioche[i] = new Tuile(i); //initialisation des 35 tuiles ds la pioche
+            TuilePioche[i] = new Tuile(i,-1,-1); //initialisation des 35 tuiles ds la pioche
         }
         
         for (int pos = TuilePioche.length - 1; pos >= 1; pos--) { // mélange la pioche

@@ -12,14 +12,23 @@ package tsuro;
 public class Tuile {
     int IndexTuile;
     int rotation;
+    int pos_i;
+    int pos_j;
     
-    public Tuile (int index) {
+    public Tuile (int index, int Pos_i, int Pos_j) {
         IndexTuile = index;
         rotation = 0;
+        pos_j = Pos_j;
+        pos_i = Pos_i;
     }
     
     public void RotationTuile() {
         rotation = (rotation + 90)%360 ;
+    }
+    
+    public void PositionnerTuile(int Pos_i, int Pos_j) {
+        pos_j = Pos_j;
+        pos_i = Pos_i;
     }
     
     

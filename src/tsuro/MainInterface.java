@@ -45,10 +45,18 @@ public class MainInterface extends javax.swing.JFrame {
                             t.IndexTuile = carteselect.IndexTuile;
                             t.rotation = carteselect.rotation;
                             joueurCourant.JouerCarte(carteselect);
+                            for (int k = 0; k < 6; k++) {
+                                for (int l = 0; l < 6; l++) {
+                                    if (carteselect.IndexTuile == plateau.grilleTuile[k][l].IndexTuile) {
+                                        plateau.grilleTuile[k][l].PositionnerTuile(k, l);
+                                        carteselect.PositionnerTuile(k, l);
+                                    }
+                                }
+                            }
+                            DeplacementPions(carteselect.pos_i, carteselect.pos_j);
                             carteselect = null;
                             JoueurSuivant();
-                            DeplacementPions(/*récupérer tuile jouée*/);
-                            AffTuilesJ(); // calcul déplacement a faire
+                            AffTuilesJ();
                         }
                         
                         PlateauJeu.repaint(); // mettre a jour le plateau de jeu
@@ -447,10 +455,10 @@ public class MainInterface extends javax.swing.JFrame {
         });
     }
     
-    public void DeplacementPions(int placeTuile) {
+    public void DeplacementPions(int placeTuile_i, int placeTuile_j) {
         for (int i = 0; i<8; i++) {
             if (ListeJoueurs[i] != null) {
-                if (ListeJoueurs[i].PionJ.positionCase == placeTuile) {
+                if (ListeJoueurs[i].PionJ.positionCase_i == placeTuile_i && ListeJoueurs[i].PionJ.positionCase_j == placeTuile_j) {
                     //déplacement a travers la tuile a faire + vérifier si tuiles adjacentes ou sortie plateau
                 }
             }
@@ -513,12 +521,13 @@ public class MainInterface extends javax.swing.JFrame {
     }
     
     public void PositionnerPion(int numJ) { // TROUEVR SOLUTION ATTRIBUER CASE INITIALE (bouton tout le tour ?)
-        System.out.println("Quel case voulez vous posez votre jeton ?");
+        System.out.println("Quel case voulez vous posez votre jeton ? (entrer ligne puis colonne)");
         Scanner sc = new Scanner(System.in);
-        Integer poscase = Integer.valueOf(sc.nextLine());
+        Integer poscasei = Integer.valueOf(sc.nextLine());
+        Integer poscasej = Integer.valueOf(sc.nextLine());
         System.out.println("Quel position sur la case voulez vous le poser ?");
         Integer postuile = Integer.valueOf(sc.nextLine());
-        ListeJoueurs[numJ].PionJ.placerPion(poscase, postuile);
+        ListeJoueurs[numJ].PionJ.placerPion(poscasei, poscasej, postuile);
     }
     
     public void JoueurSuivant() {

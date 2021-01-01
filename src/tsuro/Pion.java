@@ -11,7 +11,8 @@ package tsuro;
  */
 public class Pion {
     String Couleur; //couleur pion
-    int positionCase;
+    int positionCase_i;
+    int positionCase_j;
     int positionTuile;
     
     
@@ -19,8 +20,9 @@ public class Pion {
         Couleur = couleur; //constructeur couleur jeton
     }
     
-    public void placerPion(int posCase, int posTuile) {
-        positionCase = posCase;
+    public void placerPion(int posCase_i, int posCase_j, int posTuile) {
+        positionCase_i = posCase_i;
+        positionCase_j = posCase_j;
         positionTuile = posTuile;
     }
 }
