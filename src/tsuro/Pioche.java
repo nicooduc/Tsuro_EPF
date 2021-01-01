@@ -30,7 +30,7 @@ public class Pioche {
     
     public Tuile PrendreCarte() {
         int i = 0;
-        while (TuilePioche[i] == null) {
+        while (TuilePioche[i] == null && i < 34) {
             i++;
         }
         Tuile TuilePrise = TuilePioche[i];

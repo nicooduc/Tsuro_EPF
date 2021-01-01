@@ -74,17 +74,18 @@ public class Tuile {
     }
     
     public int NewPosPion (int PosInit, int[] TabTile) {
+        int NewPosPion = 0;
         switch (rotation) {
             case 270 -> PosInit = (PosInit + 2) % 8;
             case 180 -> PosInit = (PosInit + 4) % 8;
             case 90 -> PosInit = (PosInit + 6) % 8;
             case 0 -> {}
         }
-        int NewPosPion = TabTile[PosInit];
+        PosInit = TabTile[PosInit] - 1;
         switch (rotation) {
-            case 270 -> PosInit = (PosInit + 6) % 8;
-            case 180 -> PosInit = (PosInit + 4) % 8;
-            case 90 -> PosInit = (PosInit + 2) % 8;
+            case 270 -> NewPosPion = (PosInit + 6) % 8;
+            case 180 -> NewPosPion = (PosInit + 4) % 8;
+            case 90 -> NewPosPion = (PosInit + 2) % 8;
             case 0 -> {}
         }
         return NewPosPion;

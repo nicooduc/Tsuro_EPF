@@ -29,6 +29,7 @@ public class MainInterface extends javax.swing.JFrame {
         initComponents();
         CartesJoueur.setVisible(false);
         Panneau_joueurs.setVisible(false);
+        Panneau_infos.setVisible(false);
 
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
@@ -55,6 +56,7 @@ public class MainInterface extends javax.swing.JFrame {
                             }
                             DeplacementPions(carteselect.pos_i, carteselect.pos_j);
                             carteselect = null;
+                            joueurCourant.PiocheCarte(pioche.PrendreCarte());
                             JoueurSuivant();
                             AffTuilesJ();
                         }
@@ -107,6 +109,8 @@ public class MainInterface extends javax.swing.JFrame {
         LabelJBlanc = new javax.swing.JLabel();
         Nom_Joueur_Blanc = new javax.swing.JTextField();
         Btn_init2 = new javax.swing.JButton();
+        Panneau_infos = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         jButton10.setText("jButton10");
 
@@ -257,6 +261,13 @@ public class MainInterface extends javax.swing.JFrame {
         });
         Panneau_joueurs.add(Btn_init2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 110, 40));
 
+        Panneau_infos.setBackground(new java.awt.Color(255, 255, 204));
+        Panneau_infos.setPreferredSize(new java.awt.Dimension(462, 130));
+        Panneau_infos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setText("Tour Du Joueur");
+        Panneau_infos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 140, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -265,10 +276,12 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(PlateauJeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Panneau_start, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Panneau_joueurs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CartesJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Panneau_start, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Panneau_joueurs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CartesJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Panneau_infos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -280,6 +293,8 @@ public class MainInterface extends javax.swing.JFrame {
                         .addComponent(Panneau_start, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Panneau_joueurs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Panneau_infos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(CartesJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(PlateauJeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -330,6 +345,7 @@ public class MainInterface extends javax.swing.JFrame {
     private void Btn_init2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_init2ActionPerformed
         // TODO add your handling code here:
         CartesJoueur.setVisible(true);
+        Panneau_infos.setVisible(true);
 
         switch (nbr_joueurs) { // récupération des noms des joueurs et création (pas de break pour dérouler la suite et éviter les répétitions)
             case 8:
@@ -463,6 +479,10 @@ public class MainInterface extends javax.swing.JFrame {
                     do {
                         retour = BougerPion(i, placeTuile_i, placeTuile_j);
                     } while (retour == 1);
+                    System.out.println(ListeJoueurs[i].PionJ.Couleur);
+                    System.out.println("pos i " + ListeJoueurs[i].PionJ.positionCase_i); // connaitre emplacement pions en attendant de trouver une solution graphique
+                    System.out.println("pos j " + ListeJoueurs[i].PionJ.positionCase_j);
+                    System.out.println("pos t " + ListeJoueurs[i].PionJ.positionTuile);
                     if (retour == -1) {
                         int k = 0;
                         while (OrdreJoueurs[k] != null) {
@@ -480,14 +500,62 @@ public class MainInterface extends javax.swing.JFrame {
         int retour = 0;
         ListeJoueurs[i].PionJ.positionTuile = plateau.grilleTuile[placeTuile_i][placeTuile_j].DeplacementPion(ListeJoueurs[i].PionJ.positionTuile);
         switch (ListeJoueurs[i].PionJ.positionTuile) {
-            case 1 -> retour = plateau.TuileAdjacente(placeTuile_i - 1, placeTuile_j);
-            case 2 -> retour = plateau.TuileAdjacente(placeTuile_i - 1, placeTuile_j);
-            case 3 -> retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j + 1);
-            case 4 -> retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j + 1);
-            case 5 -> retour = plateau.TuileAdjacente(placeTuile_i + 1, placeTuile_j);
-            case 6 -> retour = plateau.TuileAdjacente(placeTuile_i + 1, placeTuile_j);
-            case 7 -> retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j - 1);
-            case 8 -> retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j - 1);
+            case 0 :
+                retour = plateau.TuileAdjacente(placeTuile_i - 1, placeTuile_j);
+                if (retour != -1) {
+                    ListeJoueurs[i].PionJ.positionCase_i--;
+                    ListeJoueurs[i].PionJ.positionTuile = 5;
+                }
+                break;
+            case 1 :
+                retour = plateau.TuileAdjacente(placeTuile_i - 1, placeTuile_j);
+                if (retour != -1) {
+                    ListeJoueurs[i].PionJ.positionCase_i--;
+                    ListeJoueurs[i].PionJ.positionTuile = 4;
+                }
+                break;
+            case 2 :
+                retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j + 1);
+                if (retour != -1) {
+                    ListeJoueurs[i].PionJ.positionCase_j++;
+                    ListeJoueurs[i].PionJ.positionTuile = 7;
+                }
+                break;
+            case 3 :
+                retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j + 1);
+                if (retour != -1) {
+                    ListeJoueurs[i].PionJ.positionCase_j++;
+                    ListeJoueurs[i].PionJ.positionTuile = 6;
+                }
+                break;
+            case 4 :
+                retour = plateau.TuileAdjacente(placeTuile_i + 1, placeTuile_j);
+                if (retour != -1) {
+                    ListeJoueurs[i].PionJ.positionCase_i++;
+                    ListeJoueurs[i].PionJ.positionTuile = 1;
+                }
+                break;
+            case 5 :
+                retour = plateau.TuileAdjacente(placeTuile_i + 1, placeTuile_j);
+                if (retour != -1) {
+                    ListeJoueurs[i].PionJ.positionCase_i++;
+                    ListeJoueurs[i].PionJ.positionTuile = 0;
+                }
+                break;
+            case 6 :
+                retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j - 1);
+                if (retour != -1) {
+                    ListeJoueurs[i].PionJ.positionCase_j--;
+                    ListeJoueurs[i].PionJ.positionTuile = 3;
+                }
+                break;
+            case 7 :
+                retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j - 1);
+                if (retour != -1) {
+                    ListeJoueurs[i].PionJ.positionCase_j--;
+                    ListeJoueurs[i].PionJ.positionTuile = 2;
+                }
+                break;
         }
         return retour;
     }
@@ -500,13 +568,13 @@ public class MainInterface extends javax.swing.JFrame {
             Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
         }
         if (joueurCourant.TuileJ[1] != null) {
-            String carte2 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[1].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
+            String carte2 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[1].IndexTuile + "-" + joueurCourant.TuileJ[1].rotation + ".png";
             Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte2)));
         } else {
             Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
         }
         if (joueurCourant.TuileJ[2] != null) {
-            String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
+            String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + "-" + joueurCourant.TuileJ[2].rotation + ".png";
             Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte3)));
         } else {
             Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
@@ -565,10 +633,18 @@ public class MainInterface extends javax.swing.JFrame {
             }
         }
         while (ListeJoueurs[(numJoueur + 1) % 8] == null) {
-            numJoueur++;
+            numJoueur = (numJoueur + 1) % 8;
+        }
+        if (joueurCourant == ListeJoueurs[numJoueur]) {
+            AfficherVictoire();
         }
         joueurCourant = ListeJoueurs[(numJoueur + 1) % 8];
     }
+    
+    public void AfficherVictoire() {
+        
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_init1;
@@ -594,6 +670,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JTextField Nom_Joueur_Rouge;
     private javax.swing.JTextField Nom_Joueur_Vert;
     private javax.swing.JTextField Nom_Joueur_Violet;
+    private javax.swing.JPanel Panneau_infos;
     private javax.swing.JPanel Panneau_joueurs;
     private javax.swing.JPanel Panneau_start;
     private javax.swing.JPanel PlateauJeu;
@@ -602,5 +679,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JButton RotationCarte3;
     private javax.swing.JButton jButton10;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
