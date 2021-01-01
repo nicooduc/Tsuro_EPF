@@ -28,4 +28,14 @@ public class Plateau {
             }
         }
     }
+    
+    public int TuileAdjacente(int pos_i, int pos_j) {
+        if (pos_i < 0 || pos_i > 7 || pos_j < 0 || pos_j > 7) {
+            return -1;
+        }
+        if (grilleTuile[pos_i][pos_j].IndexTuile == -1) {
+            return 0;
+        }
+        return 1;
+    }
 }

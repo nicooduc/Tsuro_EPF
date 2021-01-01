@@ -13,15 +13,15 @@ import java.util.Scanner;
  * @author nykol
  */
 public class MainInterface extends javax.swing.JFrame {
-    
+
     int nbr_joueurs; // nombre de joueurs
     Plateau plateau = new Plateau(); // plateau de jeu
     Joueur joueurCourant;
     Joueur ListeJoueurs[] = new Joueur[8]; // tableau comprenant tout les joueurs
     Pioche pioche = new Pioche(); // pioche de cartes
     Tuile carteselect;
-    
-    
+    Joueur OrdreJoueurs[] = new Joueur[8];
+
     /**
      * Creates new form MainInterface
      */
@@ -29,14 +29,14 @@ public class MainInterface extends javax.swing.JFrame {
         initComponents();
         CartesJoueur.setVisible(false);
         Panneau_joueurs.setVisible(false);
-        
+
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
                 TuileGraphique tuileGraph = new TuileGraphique(plateau.grilleTuile[i][j]);
                 tuileGraph.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         Tuile t = tuileGraph.TuileAssociee;
-                        
+
                         if (t.IndexTuile != -1) { // Si tuile déjà présente sur la case, ne rien faire
                             return;
                         } else if (carteselect == null) {
@@ -58,7 +58,7 @@ public class MainInterface extends javax.swing.JFrame {
                             JoueurSuivant();
                             AffTuilesJ();
                         }
-                        
+
                         PlateauJeu.repaint(); // mettre a jour le plateau de jeu
                     }
                 });
@@ -330,8 +330,8 @@ public class MainInterface extends javax.swing.JFrame {
     private void Btn_init2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_init2ActionPerformed
         // TODO add your handling code here:
         CartesJoueur.setVisible(true);
-                
-        switch(nbr_joueurs) { // récupération des noms des joueurs et création (pas de break pour dérouler la suite et éviter les répétitions)
+
+        switch (nbr_joueurs) { // récupération des noms des joueurs et création (pas de break pour dérouler la suite et éviter les répétitions)
             case 8:
                 String nomJBlanc = Nom_Joueur_Blanc.getText();
                 Joueur JBlanc = new Joueur(nomJBlanc, "Blanc");
@@ -454,17 +454,44 @@ public class MainInterface extends javax.swing.JFrame {
             }
         });
     }
-    
+
     public void DeplacementPions(int placeTuile_i, int placeTuile_j) {
-        for (int i = 0; i<8; i++) {
+        int retour = 0;
+        for (int i = 0; i < 8; i++) {
             if (ListeJoueurs[i] != null) {
                 if (ListeJoueurs[i].PionJ.positionCase_i == placeTuile_i && ListeJoueurs[i].PionJ.positionCase_j == placeTuile_j) {
-                    //déplacement a travers la tuile a faire + vérifier si tuiles adjacentes ou sortie plateau
+                    do {
+                        retour = BougerPion(i, placeTuile_i, placeTuile_j);
+                    } while (retour == 1);
+                    if (retour == -1) {
+                        int k = 0;
+                        while (OrdreJoueurs[k] != null) {
+                            k++;
+                        }
+                        OrdreJoueurs[k] = ListeJoueurs[i];
+                        ListeJoueurs[i] = null;
+                    }
                 }
             }
         }
     }
-    
+
+    public int BougerPion(int i, int placeTuile_i, int placeTuile_j) {
+        int retour = 0;
+        ListeJoueurs[i].PionJ.positionTuile = plateau.grilleTuile[placeTuile_i][placeTuile_j].DeplacementPion(ListeJoueurs[i].PionJ.positionTuile);
+        switch (ListeJoueurs[i].PionJ.positionTuile) {
+            case 1 -> retour = plateau.TuileAdjacente(placeTuile_i - 1, placeTuile_j);
+            case 2 -> retour = plateau.TuileAdjacente(placeTuile_i - 1, placeTuile_j);
+            case 3 -> retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j + 1);
+            case 4 -> retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j + 1);
+            case 5 -> retour = plateau.TuileAdjacente(placeTuile_i + 1, placeTuile_j);
+            case 6 -> retour = plateau.TuileAdjacente(placeTuile_i + 1, placeTuile_j);
+            case 7 -> retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j - 1);
+            case 8 -> retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j - 1);
+        }
+        return retour;
+    }
+
     public void AffTuilesJ() {
         if (joueurCourant.TuileJ[0] != null) {
             String carte1 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[0].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
@@ -485,12 +512,12 @@ public class MainInterface extends javax.swing.JFrame {
             Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
         }
     }
-    
+
     public void InitialiserPartie() {
         Carte1_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
         Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
         Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Tiles/TileVide.png")));
-        
+
         for (int pos = ListeJoueurs.length - 1; pos >= 1; pos--) { // mélange l'ordre des joueurs
             //hasard reçoit un nombre entier aléatoire entre 0 et pos
             int hasard = (int) Math.floor(Math.random() * (pos + 1));
@@ -499,27 +526,27 @@ public class MainInterface extends javax.swing.JFrame {
             ListeJoueurs[pos] = ListeJoueurs[hasard];
             ListeJoueurs[hasard] = sauve;
         }
-        for (int i = 0; i<8; i++) {
+        for (int i = 0; i < 8; i++) {
             if (ListeJoueurs[i] != null) {
                 DistribuerCarte(i);
                 PositionnerPion(i);
             }
         }
-        
+
         Random random = new Random();
         int Jdebut = random.nextInt(8);
         while (ListeJoueurs[Jdebut] == null) {
-            Jdebut = (Jdebut + 1)%8;
+            Jdebut = (Jdebut + 1) % 8;
         }
         joueurCourant = ListeJoueurs[Jdebut];
     }
-    
+
     public void DistribuerCarte(int numJ) {
-        for (int j = 0; j<3; j++) {
+        for (int j = 0; j < 3; j++) {
             ListeJoueurs[numJ].PiocheCarte(pioche.PrendreCarte());
         }
     }
-    
+
     public void PositionnerPion(int numJ) { // TROUEVR SOLUTION ATTRIBUER CASE INITIALE (bouton tout le tour ?)
         System.out.println("Quel case voulez vous posez votre jeton ? (entrer ligne puis colonne)");
         Scanner sc = new Scanner(System.in);
@@ -529,20 +556,20 @@ public class MainInterface extends javax.swing.JFrame {
         Integer postuile = Integer.valueOf(sc.nextLine());
         ListeJoueurs[numJ].PionJ.placerPion(poscasei, poscasej, postuile);
     }
-    
+
     public void JoueurSuivant() {
         int numJoueur = 0;
-        for (int i = 0; i<8; i++) {
+        for (int i = 0; i < 8; i++) {
             if (ListeJoueurs[i] == joueurCourant) {
                 numJoueur = i;
             }
         }
-        while (ListeJoueurs[(numJoueur+1)%8] == null) {
+        while (ListeJoueurs[(numJoueur + 1) % 8] == null) {
             numJoueur++;
         }
-        joueurCourant = ListeJoueurs[(numJoueur+1)%8];
+        joueurCourant = ListeJoueurs[(numJoueur + 1) % 8];
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_init1;
     private javax.swing.JButton Btn_init2;

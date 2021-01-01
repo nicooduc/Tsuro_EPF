@@ -31,6 +31,64 @@ public class Tuile {
         pos_i = Pos_i;
     }
     
+    public int DeplacementPion (int PosInitiale) {
+        int NewPos = 0;
+        switch (IndexTuile) {
+            case 0 -> NewPos = NewPosPion(PosInitiale, tile0());
+            case 1 -> NewPos = NewPosPion(PosInitiale, tile1());
+            case 2 -> NewPos = NewPosPion(PosInitiale, tile2());
+            case 3 -> NewPos = NewPosPion(PosInitiale, tile3());
+            case 4 -> NewPos = NewPosPion(PosInitiale, tile4());
+            case 5 -> NewPos = NewPosPion(PosInitiale, tile5());
+            case 6 -> NewPos = NewPosPion(PosInitiale, tile6());
+            case 7 -> NewPos = NewPosPion(PosInitiale, tile7());
+            case 8 -> NewPos = NewPosPion(PosInitiale, tile8());
+            case 9 -> NewPos = NewPosPion(PosInitiale, tile9());
+            case 10 -> NewPos = NewPosPion(PosInitiale, tile10());
+            case 11 -> NewPos = NewPosPion(PosInitiale, tile11());
+            case 12 -> NewPos = NewPosPion(PosInitiale, tile12());
+            case 13 -> NewPos = NewPosPion(PosInitiale, tile13());
+            case 14 -> NewPos = NewPosPion(PosInitiale, tile14());
+            case 15 -> NewPos = NewPosPion(PosInitiale, tile15());
+            case 16 -> NewPos = NewPosPion(PosInitiale, tile16());
+            case 17 -> NewPos = NewPosPion(PosInitiale, tile17());
+            case 18 -> NewPos = NewPosPion(PosInitiale, tile18());
+            case 19 -> NewPos = NewPosPion(PosInitiale, tile19());
+            case 20 -> NewPos = NewPosPion(PosInitiale, tile20());
+            case 21 -> NewPos = NewPosPion(PosInitiale, tile21());
+            case 22 -> NewPos = NewPosPion(PosInitiale, tile22());
+            case 23 -> NewPos = NewPosPion(PosInitiale, tile23());
+            case 24 -> NewPos = NewPosPion(PosInitiale, tile24());
+            case 25 -> NewPos = NewPosPion(PosInitiale, tile25());
+            case 26 -> NewPos = NewPosPion(PosInitiale, tile26());
+            case 27 -> NewPos = NewPosPion(PosInitiale, tile27());
+            case 28 -> NewPos = NewPosPion(PosInitiale, tile28());
+            case 29 -> NewPos = NewPosPion(PosInitiale, tile29());
+            case 30 -> NewPos = NewPosPion(PosInitiale, tile30());
+            case 31 -> NewPos = NewPosPion(PosInitiale, tile31());
+            case 32 -> NewPos = NewPosPion(PosInitiale, tile32());
+            case 33 -> NewPos = NewPosPion(PosInitiale, tile33());
+            case 34 -> NewPos = NewPosPion(PosInitiale, tile34());
+        }
+        return NewPos;
+    }
+    
+    public int NewPosPion (int PosInit, int[] TabTile) {
+        switch (rotation) {
+            case 270 -> PosInit = (PosInit + 2) % 8;
+            case 180 -> PosInit = (PosInit + 4) % 8;
+            case 90 -> PosInit = (PosInit + 6) % 8;
+            case 0 -> {}
+        }
+        int NewPosPion = TabTile[PosInit];
+        switch (rotation) {
+            case 270 -> PosInit = (PosInit + 6) % 8;
+            case 180 -> PosInit = (PosInit + 4) % 8;
+            case 90 -> PosInit = (PosInit + 2) % 8;
+            case 0 -> {}
+        }
+        return NewPosPion;
+    }
     
     
     
