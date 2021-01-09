@@ -46,7 +46,7 @@
                           <Component id="Panneau_infos" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="jPanel1" max="32767" attributes="0"/>
+                  <Component id="Panneau_victoire" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -64,7 +64,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="Panneau_infos" min="-2" pref="160" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel1" max="32767" attributes="0"/>
+                      <Component id="Panneau_victoire" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="CartesJoueur" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -540,7 +540,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="Panneau_victoire">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="ff" red="ff" type="rgb"/>
@@ -551,7 +551,7 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="lab8">
           <Properties>
             <Property name="text" type="java.lang.String" value="Huiti&#xe8;me:"/>
           </Properties>
@@ -561,7 +561,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
+        <Component class="javax.swing.JLabel" name="lab2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Deuxi&#xe8;me :"/>
           </Properties>
@@ -571,7 +571,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
+        <Component class="javax.swing.JLabel" name="lab3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Troisi&#xe8;me :"/>
           </Properties>
@@ -581,7 +581,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JLabel" name="lab4">
           <Properties>
             <Property name="text" type="java.lang.String" value="Quatri&#xe8;me :"/>
           </Properties>
@@ -591,7 +591,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel11">
+        <Component class="javax.swing.JLabel" name="lab5">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cinqui&#xe8;me :"/>
           </Properties>
@@ -601,7 +601,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
+        <Component class="javax.swing.JLabel" name="lab6">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sixi&#xe8;me :"/>
           </Properties>
@@ -611,7 +611,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel13">
+        <Component class="javax.swing.JLabel" name="lab7">
           <Properties>
             <Property name="text" type="java.lang.String" value="Septi&#xe8;me :"/>
           </Properties>
@@ -621,7 +621,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel14">
+        <Component class="javax.swing.JLabel" name="lab1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gagnant:"/>
           </Properties>

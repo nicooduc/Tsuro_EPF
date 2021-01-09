@@ -32,7 +32,7 @@ public class Tuile {
         int i = 0;
         while (TabPion[i] != null) {
             i++;
-            if (i == 3) {
+            if (i == 8) {
                 return false;
             }
         }
@@ -44,11 +44,12 @@ public class Tuile {
         int i = 0;
         while (TabPion[i] != pion) {
             i++;
-            if (i == 3) {
+            if (i == 8) {
                 return false;
             }
         }
         TabPion[i] = null;
+        System.out.println(TabPion[i]);
         return true;
     }
 
@@ -135,7 +136,7 @@ public class Tuile {
     }
 
     public int NewPosPion(int PosInit, int[] TabTile) {
-        int NewPosPion = 0;
+        int NewPospion = 0;
         System.out.println("pos entrée " + PosInit);
         switch (rotation) {
             case 270 ->
@@ -150,16 +151,16 @@ public class Tuile {
         PosInit = TabTile[PosInit] - 1;
         switch (rotation) {
             case 270 ->
-                NewPosPion = (PosInit + 6) % 8;
+                NewPospion = (PosInit + 6) % 8;
             case 180 ->
-                NewPosPion = (PosInit + 4) % 8;
+                NewPospion = (PosInit + 4) % 8;
             case 90 ->
-                NewPosPion = (PosInit + 2) % 8;
+                NewPospion = (PosInit + 2) % 8;
             case 0 ->
-                NewPosPion = PosInit;
+                NewPospion = PosInit;
         }
-        System.out.println("pos sortie" + NewPosPion);
-        return NewPosPion;
+        System.out.println("pos sortie " + NewPospion);
+        return NewPospion;
     }
 
     public int[] tile0() {

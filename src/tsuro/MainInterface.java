@@ -31,6 +31,7 @@ public class MainInterface extends javax.swing.JFrame {
         CartesJoueur.setVisible(false);
         Panneau_joueurs.setVisible(false);
         Panneau_infos.setVisible(false);
+        Panneau_victoire.setVisible(false);
 
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
@@ -121,15 +122,15 @@ public class MainInterface extends javax.swing.JFrame {
         RecupPosTuile = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         BtnPosPion = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        Panneau_victoire = new javax.swing.JPanel();
+        lab8 = new javax.swing.JLabel();
+        lab2 = new javax.swing.JLabel();
+        lab3 = new javax.swing.JLabel();
+        lab4 = new javax.swing.JLabel();
+        lab5 = new javax.swing.JLabel();
+        lab6 = new javax.swing.JLabel();
+        lab7 = new javax.swing.JLabel();
+        lab1 = new javax.swing.JLabel();
         Label_premier = new javax.swing.JLabel();
         Label_deuxieme = new javax.swing.JLabel();
         Label_quatrieme = new javax.swing.JLabel();
@@ -321,56 +322,56 @@ public class MainInterface extends javax.swing.JFrame {
         });
         Panneau_infos.add(BtnPosPion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Panneau_victoire.setBackground(new java.awt.Color(255, 255, 204));
+        Panneau_victoire.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setText("Huitième:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 100, 20));
+        lab8.setText("Huitième:");
+        Panneau_victoire.add(lab8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 100, 20));
 
-        jLabel8.setText("Deuxième :");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
+        lab2.setText("Deuxième :");
+        Panneau_victoire.add(lab2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
 
-        jLabel9.setText("Troisième :");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        lab3.setText("Troisième :");
+        Panneau_victoire.add(lab3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        jLabel10.setText("Quatrième :");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
+        lab4.setText("Quatrième :");
+        Panneau_victoire.add(lab4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
 
-        jLabel11.setText("Cinquième :");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
+        lab5.setText("Cinquième :");
+        Panneau_victoire.add(lab5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
-        jLabel12.setText("Sixième :");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+        lab6.setText("Sixième :");
+        Panneau_victoire.add(lab6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
 
-        jLabel13.setText("Septième :");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
+        lab7.setText("Septième :");
+        Panneau_victoire.add(lab7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
-        jLabel14.setText("Gagnant:");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        lab1.setText("Gagnant:");
+        Panneau_victoire.add(lab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         Label_premier.setText("jLabel15");
-        jPanel1.add(Label_premier, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        Panneau_victoire.add(Label_premier, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
         Label_deuxieme.setText("jLabel16");
-        jPanel1.add(Label_deuxieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
+        Panneau_victoire.add(Label_deuxieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
         Label_quatrieme.setText("jLabel17");
-        jPanel1.add(Label_quatrieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+        Panneau_victoire.add(Label_quatrieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
 
         Label_septieme.setText("jLabel18");
-        jPanel1.add(Label_septieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+        Panneau_victoire.add(Label_septieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
 
         Label_huitieme.setText("jLabel19");
-        jPanel1.add(Label_huitieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
+        Panneau_victoire.add(Label_huitieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
 
         Label_cinquieme.setText("jLabel20");
-        jPanel1.add(Label_cinquieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
+        Panneau_victoire.add(Label_cinquieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
 
         Label_sixieme.setText("jLabel21");
-        jPanel1.add(Label_sixieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
+        Panneau_victoire.add(Label_sixieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
 
         Label_troisieme.setText("jLabel22");
-        jPanel1.add(Label_troisieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
+        Panneau_victoire.add(Label_troisieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -389,7 +390,7 @@ public class MainInterface extends javax.swing.JFrame {
                                 .addComponent(Panneau_joueurs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(CartesJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Panneau_infos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Panneau_victoire, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -404,7 +405,7 @@ public class MainInterface extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Panneau_infos, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Panneau_victoire, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CartesJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(PlateauJeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -557,6 +558,7 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej > 0 && poscasej < 5) {
@@ -564,6 +566,7 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -571,6 +574,7 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 }
@@ -581,6 +585,7 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -588,14 +593,8 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
-                        JoueurSuivant();
-
-                    } else if (poscasej == 5) {
-                        if (postuile == 2 || postuile == 3) {
-                            joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
-                            JoueurSuivant();
-                        }
                     }
                 }
                 break;
@@ -605,6 +604,7 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -612,14 +612,8 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
-                        JoueurSuivant();
-
-                    } else if (poscasej == 5) {
-                        if (postuile == 2 || postuile == 3) {
-                            joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
-                            JoueurSuivant();
-                        }
                     }
                 }
                 break;
@@ -629,6 +623,7 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -636,14 +631,8 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
-                        JoueurSuivant();
-
-                    } else if (poscasej == 5) {
-                        if (postuile == 2 || postuile == 3) {
-                            joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
-                            JoueurSuivant();
-                        }
                     }
                 }
                 break;
@@ -653,6 +642,7 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -660,14 +650,8 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
-                        JoueurSuivant();
-
-                    } else if (poscasej == 5) {
-                        if (postuile == 2 || postuile == 3) {
-                            joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
-                            JoueurSuivant();
-                        }
                     }
                 }
                 break;
@@ -677,6 +661,7 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej > 0 && poscasej < 5) {
@@ -684,6 +669,7 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -691,6 +677,7 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
+                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 }
@@ -757,11 +744,11 @@ public class MainInterface extends javax.swing.JFrame {
                     EnleverPionSurCarte(joueurCourant.PionJ);
                     do {
                         retour = BougerPion(i, placeTuile_i, placeTuile_j);
+                        System.out.println(ListeJoueurs[i].PionJ.Couleur);
+                        System.out.println("pos i " + ListeJoueurs[i].PionJ.positionCase_i); // connaitre emplacement pions
+                        System.out.println("pos j " + ListeJoueurs[i].PionJ.positionCase_j);
+                        System.out.println("pos t " + ListeJoueurs[i].PionJ.positionTuile);
                     } while (retour == 1);
-                    System.out.println(ListeJoueurs[i].PionJ.Couleur);
-                    System.out.println("pos i " + ListeJoueurs[i].PionJ.positionCase_i); // connaitre emplacement pions
-                    System.out.println("pos j " + ListeJoueurs[i].PionJ.positionCase_j);
-                    System.out.println("pos t " + ListeJoueurs[i].PionJ.positionTuile);
                     PoserPionSurCarte(joueurCourant.PionJ);
                     PlateauJeu.repaint();
                     if (retour == -1) {
@@ -780,6 +767,7 @@ public class MainInterface extends javax.swing.JFrame {
     public int BougerPion(int i, int placeTuile_i, int placeTuile_j) {
         int retour = 0;
         ListeJoueurs[i].PionJ.positionTuile = plateau.grilleTuile[placeTuile_i][placeTuile_j].DeplacementPion(ListeJoueurs[i].PionJ.positionTuile);
+        System.out.println("postuile bougerpion " + ListeJoueurs[i].PionJ.positionTuile);
         switch (ListeJoueurs[i].PionJ.positionTuile) {
             case 0:
                 retour = plateau.TuileAdjacente(placeTuile_i - 1, placeTuile_j);
@@ -838,6 +826,7 @@ public class MainInterface extends javax.swing.JFrame {
                 }
                 break;
         }
+        System.out.println("retour " + retour);
         return retour;
     }
 
@@ -914,6 +903,7 @@ public class MainInterface extends javax.swing.JFrame {
     }
 
     public void AfficherVictoire() {
+        Panneau_victoire.setVisible(true);
         for (int i = 0; i < 8; i++) {
             if (ListeJoueurs[i] != null) {
                 JoueurGagnant = ListeJoueurs[i];
@@ -929,7 +919,7 @@ public class MainInterface extends javax.swing.JFrame {
                 Label_quatrieme.setText(OrdreJoueurs[4].Nom);
                 Label_troisieme.setText(OrdreJoueurs[5].Nom);
                 Label_deuxieme.setText(OrdreJoueurs[6].Nom);
-                Label_premier.setText(OrdreJoueurs[7].Nom);
+                Label_premier.setText(JoueurGagnant.Nom);
             }
             case 7 -> {
                 Label_septieme.setText(OrdreJoueurs[0].Nom);
@@ -938,7 +928,9 @@ public class MainInterface extends javax.swing.JFrame {
                 Label_quatrieme.setText(OrdreJoueurs[3].Nom);
                 Label_troisieme.setText(OrdreJoueurs[4].Nom);
                 Label_deuxieme.setText(OrdreJoueurs[5].Nom);
-                Label_premier.setText(OrdreJoueurs[6].Nom);
+                Label_premier.setText(JoueurGagnant.Nom);
+                Label_huitieme.setVisible(false);
+                lab8.setVisible(false);
             }
             case 6 -> {
                 Label_sixieme.setText(OrdreJoueurs[0].Nom);
@@ -946,32 +938,73 @@ public class MainInterface extends javax.swing.JFrame {
                 Label_quatrieme.setText(OrdreJoueurs[2].Nom);
                 Label_troisieme.setText(OrdreJoueurs[3].Nom);
                 Label_deuxieme.setText(OrdreJoueurs[4].Nom);
-                Label_premier.setText(OrdreJoueurs[5].Nom);
+                Label_premier.setText(JoueurGagnant.Nom);
+                Label_huitieme.setVisible(false);
+                lab8.setVisible(false);
+                Label_septieme.setVisible(false);
+                lab7.setVisible(false);
             }
             case 5 -> {
                 Label_cinquieme.setText(OrdreJoueurs[0].Nom);
                 Label_quatrieme.setText(OrdreJoueurs[1].Nom);
                 Label_troisieme.setText(OrdreJoueurs[2].Nom);
                 Label_deuxieme.setText(OrdreJoueurs[3].Nom);
-                Label_premier.setText(OrdreJoueurs[4].Nom);
+                Label_premier.setText(JoueurGagnant.Nom);
+                Label_huitieme.setVisible(false);
+                lab8.setVisible(false);
+                Label_septieme.setVisible(false);
+                lab7.setVisible(false);
+                Label_sixieme.setVisible(false);
+                lab6.setVisible(false);
             }
             case 4 -> {
                 Label_quatrieme.setText(OrdreJoueurs[0].Nom);
                 Label_troisieme.setText(OrdreJoueurs[1].Nom);
                 Label_deuxieme.setText(OrdreJoueurs[2].Nom);
-                Label_premier.setText(OrdreJoueurs[3].Nom);
+                Label_premier.setText(JoueurGagnant.Nom);
+                Label_huitieme.setVisible(false);
+                lab8.setVisible(false);
+                Label_septieme.setVisible(false);
+                lab7.setVisible(false);
+                Label_sixieme.setVisible(false);
+                lab6.setVisible(false);
+                Label_cinquieme.setVisible(false);
+                lab5.setVisible(false);
             }
             case 3 -> {
                 Label_troisieme.setText(OrdreJoueurs[0].Nom);
                 Label_deuxieme.setText(OrdreJoueurs[1].Nom);
-                Label_premier.setText(OrdreJoueurs[2].Nom);
+                Label_premier.setText(JoueurGagnant.Nom);
+                Label_huitieme.setVisible(false);
+                lab8.setVisible(false);
+                Label_septieme.setVisible(false);
+                lab7.setVisible(false);
+                Label_sixieme.setVisible(false);
+                lab6.setVisible(false);
+                Label_cinquieme.setVisible(false);
+                lab5.setVisible(false);
+                Label_quatrieme.setVisible(false);
+                lab4.setVisible(false);
             }
             case 2 -> {
                 Label_deuxieme.setText(OrdreJoueurs[0].Nom);
-                Label_premier.setText(OrdreJoueurs[1].Nom);
+                Label_premier.setText(JoueurGagnant.Nom);
+                Label_huitieme.setVisible(false);
+                lab8.setVisible(false);
+                Label_septieme.setVisible(false);
+                lab7.setVisible(false);
+                Label_sixieme.setVisible(false);
+                lab6.setVisible(false);
+                Label_cinquieme.setVisible(false);
+                lab5.setVisible(false);
+                Label_quatrieme.setVisible(false);
+                lab4.setVisible(false);
+                Label_troisieme.setVisible(false);
+                lab3.setVisible(false);
             }
 
         }
+        CartesJoueur.setVisible(false);
     }
 
 
@@ -1012,6 +1045,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel Panneau_infos;
     private javax.swing.JPanel Panneau_joueurs;
     private javax.swing.JPanel Panneau_start;
+    private javax.swing.JPanel Panneau_victoire;
     private javax.swing.JPanel PlateauJeu;
     private javax.swing.JTextField RecupColonneTableau;
     private javax.swing.JTextField RecupLigneTableau;
@@ -1021,19 +1055,18 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JButton RotationCarte3;
     private javax.swing.JButton jButton10;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lab1;
+    private javax.swing.JLabel lab2;
+    private javax.swing.JLabel lab3;
+    private javax.swing.JLabel lab4;
+    private javax.swing.JLabel lab5;
+    private javax.swing.JLabel lab6;
+    private javax.swing.JLabel lab7;
+    private javax.swing.JLabel lab8;
     // End of variables declaration//GEN-END:variables
 }
