@@ -484,7 +484,10 @@ public class MainInterface extends javax.swing.JFrame {
                         JoueurSuivant();
                     }
                 } else if (poscasej > 0 && poscasej < 5) {
-                    
+                    if (postuile == 0 || postuile == 1) {
+                        joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        JoueurSuivant();
+                    }
                 } else if (poscasej == 5) {
                     
                 }
