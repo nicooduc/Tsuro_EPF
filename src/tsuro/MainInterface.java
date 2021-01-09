@@ -906,7 +906,7 @@ public class MainInterface extends javax.swing.JFrame {
         while (ListeJoueurs[(numJoueur + 1) % 8] == null) {
             numJoueur = (numJoueur + 1) % 8;
         }
-        if (joueurCourant == ListeJoueurs[numJoueur]) {
+        if (joueurCourant == ListeJoueurs[(numJoueur + 1) % 8]) {
             AfficherVictoire();
         }
         joueurCourant = ListeJoueurs[(numJoueur + 1) % 8];
