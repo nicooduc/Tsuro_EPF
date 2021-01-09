@@ -698,7 +698,7 @@ public class MainInterface extends javax.swing.JFrame {
                         retour = BougerPion(i, placeTuile_i, placeTuile_j);
                     } while (retour == 1);
                     System.out.println(ListeJoueurs[i].PionJ.Couleur);
-                    System.out.println("pos i " + ListeJoueurs[i].PionJ.positionCase_i); // connaitre emplacement pions en attendant de trouver une solution graphique
+                    System.out.println("pos i " + ListeJoueurs[i].PionJ.positionCase_i); // connaitre emplacement pions
                     System.out.println("pos j " + ListeJoueurs[i].PionJ.positionCase_j);
                     System.out.println("pos t " + ListeJoueurs[i].PionJ.positionTuile);
                     PoserPionSurCarte(joueurCourant.PionJ);
