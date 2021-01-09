@@ -379,7 +379,6 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void Btn_init2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_init2ActionPerformed
         // TODO add your handling code here:
-        // CartesJoueur.setVisible(true); a supprimer si solution 1 choix pos pion initiale fonctionne
         Panneau_infos.setVisible(true);
 
         switch (nbr_joueurs) { // récupération des noms des joueurs et création (pas de break pour dérouler la suite et éviter les répétitions)
@@ -481,6 +480,8 @@ public class MainInterface extends javax.swing.JFrame {
                 if (poscasej == 0) {
                     if (postuile == 0 || postuile == 1 || postuile == 6 || postuile == 7) {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
                         JoueurSuivant();
                     }
                 } else if (poscasej > 0 && poscasej < 5) {
@@ -532,6 +533,10 @@ public class MainInterface extends javax.swing.JFrame {
                 new MainInterface().setVisible(true);
             }
         });
+    }
+    
+    public void PoserPionSurCarte(Pion pion) {
+        plateau.grilleTuile[pion.positionCase_i][pion.positionCase_j].PionPresent(pion);
     }
 
     public void DeplacementPions(int placeTuile_i, int placeTuile_j) {
@@ -660,7 +665,6 @@ public class MainInterface extends javax.swing.JFrame {
         for (int i = 0; i < 8; i++) {
             if (ListeJoueurs[i] != null) {
                 DistribuerCarte(i);
-                // PositionnerPion(i); a suppr si pos pion sol 1 fonctionne
             }
         }
 
@@ -677,17 +681,6 @@ public class MainInterface extends javax.swing.JFrame {
         for (int j = 0; j < 3; j++) {
             ListeJoueurs[numJ].PiocheCarte(pioche.PrendreCarte());
         }
-    }
-
-    public void PositionnerPion(int numJ) { // TROUVER SOLUTION ATTRIBUER CASE INITIALE (bouton tout le tour ?)
-        AffNomJoueurCourant.setText(ListeJoueurs[numJ].Nom);
-        System.out.println("Quel case voulez vous posez votre jeton ? (entrer ligne puis colonne)");
-        Scanner sc = new Scanner(System.in);
-        Integer poscasei = Integer.valueOf(sc.nextLine());
-        Integer poscasej = Integer.valueOf(sc.nextLine());
-        System.out.println("Quel position sur la case voulez vous le poser ?");
-        Integer postuile = Integer.valueOf(sc.nextLine());
-        ListeJoueurs[numJ].PionJ.placerPion(poscasei, poscasej, postuile);
     }
 
     public void JoueurSuivant() {
