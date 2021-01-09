@@ -29,7 +29,7 @@ public class Joueur {
     }
     
     public boolean PiocheCarte(Tuile tuilepioche) {
-        int i =0;
+        int i = 0;
         while (TuileJ[i] != null) {
             i++;
             if (i == 3) {

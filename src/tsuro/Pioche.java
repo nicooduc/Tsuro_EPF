@@ -15,9 +15,9 @@ public class Pioche {
 
     public Pioche() {
         for (int i = 0; i < 35; i++) {
-            TuilePioche[i] = new Tuile(i,-1,-1); //initialisation des 35 tuiles ds la pioche
+            TuilePioche[i] = new Tuile(i, -1, -1); //initialisation des 35 tuiles ds la pioche
         }
-        
+
         for (int pos = TuilePioche.length - 1; pos >= 1; pos--) { // mélange la pioche
             //hasard reçoit un nombre entier aléatoire entre 0 et pos
             int hasard = (int) Math.floor(Math.random() * (pos + 1));
@@ -27,7 +27,7 @@ public class Pioche {
             TuilePioche[hasard] = sauve;
         }
     }
-    
+
     public Tuile PrendreCarte() {
         int i = 0;
         while (TuilePioche[i] == null && i < 34) {

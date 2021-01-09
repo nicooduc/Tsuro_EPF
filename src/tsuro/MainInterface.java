@@ -529,68 +529,84 @@ public class MainInterface extends javax.swing.JFrame {
                 } else if (poscasej > 0 && poscasej < 5) {
                     if (postuile == 0 || postuile == 1) {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
-                    if (postuile == 0 || postuile == 1 || postuile==2 || postuile==3) {
+                    if (postuile == 0 || postuile == 1 || postuile == 2 || postuile == 3) {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
                         JoueurSuivant();
                     }
                 }
                 break;
             case 1:
                 if (poscasej == 0) {
-                    if (postuile == 6 || postuile == 7 ) {
+                    if (postuile == 6 || postuile == 7) {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
-                        JoueurSuivant();
-                    
-                    } else if (poscasej==5){
-                    if (postuile==2 || postuile==3) {
-                        joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
                         JoueurSuivant();
                     }
+                } else if (poscasej == 5) {
+                    if (postuile == 2 || postuile == 3) {
+                        joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
+                        JoueurSuivant();
                     }
                 }
                 break;
             case 2:
                 if (poscasej == 0) {
-                    if (postuile == 6 || postuile == 7 ) {
+                    if (postuile == 6 || postuile == 7) {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
-                        JoueurSuivant();
-                    
-                    } else if (poscasej==5){
-                    if (postuile==2 || postuile==3) {
-                        joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
                         JoueurSuivant();
                     }
+                } else if (poscasej == 5) {
+                    if (postuile == 2 || postuile == 3) {
+                        joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
+                        JoueurSuivant();
                     }
                 }
                 break;
             case 3:
                 if (poscasej == 0) {
-                    if (postuile == 6 || postuile == 7 ) {
+                    if (postuile == 6 || postuile == 7) {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
-                        JoueurSuivant();
-                    
-                    } else if (poscasej==5){
-                    if (postuile==2 || postuile==3) {
-                        joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
                         JoueurSuivant();
                     }
+                } else if (poscasej == 5) {
+                    if (postuile == 2 || postuile == 3) {
+                        joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
+                        JoueurSuivant();
                     }
                 }
                 break;
             case 4:
                 if (poscasej == 0) {
-                    if (postuile == 6 || postuile == 7 ) {
+                    if (postuile == 6 || postuile == 7) {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
-                        JoueurSuivant();
-                    
-                    } else if (poscasej==5){
-                    if (postuile==2 || postuile==3) {
-                        joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
                         JoueurSuivant();
                     }
+                } else if (poscasej == 5) {
+                    if (postuile == 2 || postuile == 3) {
+                        joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
+                        JoueurSuivant();
                     }
                 }
                 break;
@@ -598,22 +614,28 @@ public class MainInterface extends javax.swing.JFrame {
                 if (poscasej == 0) {
                     if (postuile == 4 || postuile == 5 || postuile == 6 || postuile == 7) {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
                         JoueurSuivant();
                     }
                 } else if (poscasej > 0 && poscasej < 5) {
                     if (postuile == 4 || postuile == 5) {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
-                    if (postuile == 2 || postuile == 3 || postuile==4 || postuile==5) {
+                    if (postuile == 2 || postuile == 3 || postuile == 4 || postuile == 5) {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        PoserPionSurCarte(joueurCourant.PionJ);
+                        PlateauJeu.repaint();
                         JoueurSuivant();
                     }
                 }
                 break;
         }
-        
+
         if (joueurCourant.PionJ.positionTuile != -1) {
             CartesJoueur.setVisible(true);
             RecupLigneTableau.setEnabled(false);
@@ -657,7 +679,7 @@ public class MainInterface extends javax.swing.JFrame {
             }
         });
     }
-    
+
     public void PoserPionSurCarte(Pion pion) {
         plateau.grilleTuile[pion.positionCase_i][pion.positionCase_j].PionPresent(pion);
     }
@@ -691,56 +713,56 @@ public class MainInterface extends javax.swing.JFrame {
         int retour = 0;
         ListeJoueurs[i].PionJ.positionTuile = plateau.grilleTuile[placeTuile_i][placeTuile_j].DeplacementPion(ListeJoueurs[i].PionJ.positionTuile);
         switch (ListeJoueurs[i].PionJ.positionTuile) {
-            case 0 :
+            case 0:
                 retour = plateau.TuileAdjacente(placeTuile_i - 1, placeTuile_j);
                 if (retour != -1) {
                     ListeJoueurs[i].PionJ.positionCase_i--;
                     ListeJoueurs[i].PionJ.positionTuile = 5;
                 }
                 break;
-            case 1 :
+            case 1:
                 retour = plateau.TuileAdjacente(placeTuile_i - 1, placeTuile_j);
                 if (retour != -1) {
                     ListeJoueurs[i].PionJ.positionCase_i--;
                     ListeJoueurs[i].PionJ.positionTuile = 4;
                 }
                 break;
-            case 2 :
+            case 2:
                 retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j + 1);
                 if (retour != -1) {
                     ListeJoueurs[i].PionJ.positionCase_j++;
                     ListeJoueurs[i].PionJ.positionTuile = 7;
                 }
                 break;
-            case 3 :
+            case 3:
                 retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j + 1);
                 if (retour != -1) {
                     ListeJoueurs[i].PionJ.positionCase_j++;
                     ListeJoueurs[i].PionJ.positionTuile = 6;
                 }
                 break;
-            case 4 :
+            case 4:
                 retour = plateau.TuileAdjacente(placeTuile_i + 1, placeTuile_j);
                 if (retour != -1) {
                     ListeJoueurs[i].PionJ.positionCase_i++;
                     ListeJoueurs[i].PionJ.positionTuile = 1;
                 }
                 break;
-            case 5 :
+            case 5:
                 retour = plateau.TuileAdjacente(placeTuile_i + 1, placeTuile_j);
                 if (retour != -1) {
                     ListeJoueurs[i].PionJ.positionCase_i++;
                     ListeJoueurs[i].PionJ.positionTuile = 0;
                 }
                 break;
-            case 6 :
+            case 6:
                 retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j - 1);
                 if (retour != -1) {
                     ListeJoueurs[i].PionJ.positionCase_j--;
                     ListeJoueurs[i].PionJ.positionTuile = 3;
                 }
                 break;
-            case 7 :
+            case 7:
                 retour = plateau.TuileAdjacente(placeTuile_i, placeTuile_j - 1);
                 if (retour != -1) {
                     ListeJoueurs[i].PionJ.positionCase_j--;
@@ -822,11 +844,11 @@ public class MainInterface extends javax.swing.JFrame {
         joueurCourant = ListeJoueurs[(numJoueur + 1) % 8];
         AffNomJoueurCourant.setText(joueurCourant.Nom);
     }
-    
+
     public void AfficherVictoire() {
-        
+
     }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AffNomJoueurCourant;
