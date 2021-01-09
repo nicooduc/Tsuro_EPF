@@ -21,6 +21,7 @@ public class MainInterface extends javax.swing.JFrame {
     Pioche pioche = new Pioche(); // pioche de cartes
     Tuile carteselect;
     Joueur OrdreJoueurs[] = new Joueur[8];
+    Joueur JoueurGagnant;
 
     /**
      * Creates new form MainInterface
@@ -129,6 +130,14 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        Label_premier = new javax.swing.JLabel();
+        Label_deuxieme = new javax.swing.JLabel();
+        Label_quatrieme = new javax.swing.JLabel();
+        Label_septieme = new javax.swing.JLabel();
+        Label_huitieme = new javax.swing.JLabel();
+        Label_cinquieme = new javax.swing.JLabel();
+        Label_sixieme = new javax.swing.JLabel();
+        Label_troisieme = new javax.swing.JLabel();
 
         jButton10.setText("jButton10");
 
@@ -315,29 +324,53 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setText("Premier mort :");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jLabel7.setText("Huitième:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 100, 20));
 
-        jLabel8.setText("Deuxième mort :");
+        jLabel8.setText("Deuxième :");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 20));
 
-        jLabel9.setText("Troisième mort:");
+        jLabel9.setText("Troisième :");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        jLabel10.setText("Quatrième mort:");
+        jLabel10.setText("Quatrième :");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
 
-        jLabel11.setText("Cinquième mort:");
+        jLabel11.setText("Cinquième :");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
-        jLabel12.setText("Sixième mort :");
+        jLabel12.setText("Sixième :");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
 
-        jLabel13.setText("Septième mort:");
+        jLabel13.setText("Septième :");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
         jLabel14.setText("Gagnant:");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        Label_premier.setText("jLabel15");
+        jPanel1.add(Label_premier, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+
+        Label_deuxieme.setText("jLabel16");
+        jPanel1.add(Label_deuxieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
+
+        Label_quatrieme.setText("jLabel17");
+        jPanel1.add(Label_quatrieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+
+        Label_septieme.setText("jLabel18");
+        jPanel1.add(Label_septieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+
+        Label_huitieme.setText("jLabel19");
+        jPanel1.add(Label_huitieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
+
+        Label_cinquieme.setText("jLabel20");
+        jPanel1.add(Label_cinquieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
+
+        Label_sixieme.setText("jLabel21");
+        jPanel1.add(Label_sixieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
+
+        Label_troisieme.setText("jLabel22");
+        jPanel1.add(Label_troisieme, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -556,6 +589,13 @@ public class MainInterface extends javax.swing.JFrame {
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
                         JoueurSuivant();
+                        JoueurSuivant();
+
+                    } else if (poscasej == 5) {
+                        if (postuile == 2 || postuile == 3) {
+                            joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                            JoueurSuivant();
+                        }
                     }
                 }
                 break;
@@ -573,6 +613,13 @@ public class MainInterface extends javax.swing.JFrame {
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
                         JoueurSuivant();
+                        JoueurSuivant();
+
+                    } else if (poscasej == 5) {
+                        if (postuile == 2 || postuile == 3) {
+                            joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                            JoueurSuivant();
+                        }
                     }
                 }
                 break;
@@ -590,6 +637,13 @@ public class MainInterface extends javax.swing.JFrame {
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
                         JoueurSuivant();
+                        JoueurSuivant();
+
+                    } else if (poscasej == 5) {
+                        if (postuile == 2 || postuile == 3) {
+                            joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                            JoueurSuivant();
+                        }
                     }
                 }
                 break;
@@ -607,6 +661,13 @@ public class MainInterface extends javax.swing.JFrame {
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
                         JoueurSuivant();
+                        JoueurSuivant();
+
+                    } else if (poscasej == 5) {
+                        if (postuile == 2 || postuile == 3) {
+                            joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                            JoueurSuivant();
+                        }
                     }
                 }
                 break;
@@ -683,7 +744,7 @@ public class MainInterface extends javax.swing.JFrame {
     public void PoserPionSurCarte(Pion pion) {
         plateau.grilleTuile[pion.positionCase_i][pion.positionCase_j].PionPresent(pion);
     }
-    
+
     public void EnleverPionSurCarte(Pion pion) {
         plateau.grilleTuile[pion.positionCase_i][pion.positionCase_j].PionAbsent(pion);
     }
@@ -853,7 +914,64 @@ public class MainInterface extends javax.swing.JFrame {
     }
 
     public void AfficherVictoire() {
+        for (int i = 0; i < 8; i++) {
+            if (ListeJoueurs[i] != null) {
+                JoueurGagnant = ListeJoueurs[i];
+            }
+        }
+        System.out.println("Gagnant: " + JoueurGagnant.Nom);
+        switch (nbr_joueurs) {
+            case 8 -> {
+                Label_huitieme.setText(OrdreJoueurs[0].Nom);
+                Label_septieme.setText(OrdreJoueurs[1].Nom);
+                Label_sixieme.setText(OrdreJoueurs[2].Nom);
+                Label_cinquieme.setText(OrdreJoueurs[3].Nom);
+                Label_quatrieme.setText(OrdreJoueurs[4].Nom);
+                Label_troisieme.setText(OrdreJoueurs[5].Nom);
+                Label_deuxieme.setText(OrdreJoueurs[6].Nom);
+                Label_premier.setText(OrdreJoueurs[7].Nom);
+            }
+            case 7 -> {
+                Label_septieme.setText(OrdreJoueurs[0].Nom);
+                Label_sixieme.setText(OrdreJoueurs[1].Nom);
+                Label_cinquieme.setText(OrdreJoueurs[2].Nom);
+                Label_quatrieme.setText(OrdreJoueurs[3].Nom);
+                Label_troisieme.setText(OrdreJoueurs[4].Nom);
+                Label_deuxieme.setText(OrdreJoueurs[5].Nom);
+                Label_premier.setText(OrdreJoueurs[6].Nom);
+            }
+            case 6 -> {
+                Label_sixieme.setText(OrdreJoueurs[0].Nom);
+                Label_cinquieme.setText(OrdreJoueurs[1].Nom);
+                Label_quatrieme.setText(OrdreJoueurs[2].Nom);
+                Label_troisieme.setText(OrdreJoueurs[3].Nom);
+                Label_deuxieme.setText(OrdreJoueurs[4].Nom);
+                Label_premier.setText(OrdreJoueurs[5].Nom);
+            }
+            case 5 -> {
+                Label_cinquieme.setText(OrdreJoueurs[0].Nom);
+                Label_quatrieme.setText(OrdreJoueurs[1].Nom);
+                Label_troisieme.setText(OrdreJoueurs[2].Nom);
+                Label_deuxieme.setText(OrdreJoueurs[3].Nom);
+                Label_premier.setText(OrdreJoueurs[4].Nom);
+            }
+            case 4 -> {
+                Label_quatrieme.setText(OrdreJoueurs[0].Nom);
+                Label_troisieme.setText(OrdreJoueurs[1].Nom);
+                Label_deuxieme.setText(OrdreJoueurs[2].Nom);
+                Label_premier.setText(OrdreJoueurs[3].Nom);
+            }
+            case 3 -> {
+                Label_troisieme.setText(OrdreJoueurs[0].Nom);
+                Label_deuxieme.setText(OrdreJoueurs[1].Nom);
+                Label_premier.setText(OrdreJoueurs[2].Nom);
+            }
+            case 2 -> {
+                Label_deuxieme.setText(OrdreJoueurs[0].Nom);
+                Label_premier.setText(OrdreJoueurs[1].Nom);
+            }
 
+        }
     }
 
 
@@ -874,6 +992,14 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel LabelJRouge;
     private javax.swing.JLabel LabelJVert;
     private javax.swing.JLabel LabelJViolet;
+    private javax.swing.JLabel Label_cinquieme;
+    private javax.swing.JLabel Label_deuxieme;
+    private javax.swing.JLabel Label_huitieme;
+    private javax.swing.JLabel Label_premier;
+    private javax.swing.JLabel Label_quatrieme;
+    private javax.swing.JLabel Label_septieme;
+    private javax.swing.JLabel Label_sixieme;
+    private javax.swing.JLabel Label_troisieme;
     private javax.swing.JTextField Nbr_Joueurs;
     private javax.swing.JTextField Nom_Joueur_Blanc;
     private javax.swing.JTextField Nom_Joueur_Bleu;
