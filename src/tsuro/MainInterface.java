@@ -607,6 +607,7 @@ public class MainInterface extends javax.swing.JFrame {
             Jdebut = (Jdebut + 1) % 8;
         }
         joueurCourant = ListeJoueurs[Jdebut];
+        
     }
 
     public void DistribuerCarte(int numJ) {
