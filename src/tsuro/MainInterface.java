@@ -426,13 +426,13 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void RotationCarte2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte2ActionPerformed
         joueurCourant.TuileJ[1].RotationTuile();
-        String carte2 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[1].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
+        String carte2 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[1].IndexTuile + "-" + joueurCourant.TuileJ[1].rotation + ".png";
         Carte2_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte2)));
     }//GEN-LAST:event_RotationCarte2ActionPerformed
 
     private void RotationCarte3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotationCarte3ActionPerformed
         joueurCourant.TuileJ[2].RotationTuile();
-        String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + "-" + joueurCourant.TuileJ[0].rotation + ".png";
+        String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + "-" + joueurCourant.TuileJ[2].rotation + ".png";
         Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte3)));
     }//GEN-LAST:event_RotationCarte3ActionPerformed
 
