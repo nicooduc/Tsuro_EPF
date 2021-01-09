@@ -75,6 +75,7 @@ public class Tuile {
     
     public int NewPosPion (int PosInit, int[] TabTile) {
         int NewPosPion = 0;
+        System.out.println("pos entrée " + PosInit);
         switch (rotation) {
             case 270 -> PosInit = (PosInit + 2) % 8;
             case 180 -> PosInit = (PosInit + 4) % 8;
@@ -86,8 +87,9 @@ public class Tuile {
             case 270 -> NewPosPion = (PosInit + 6) % 8;
             case 180 -> NewPosPion = (PosInit + 4) % 8;
             case 90 -> NewPosPion = (PosInit + 2) % 8;
-            case 0 -> {}
+            case 0 -> NewPosPion = PosInit;
         }
+        System.out.println("pos sortie" + NewPosPion);
         return NewPosPion;
     }
     

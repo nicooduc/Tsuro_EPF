@@ -18,6 +18,7 @@ public class Pion {
     
     public Pion(String couleur) {
         Couleur = couleur; //constructeur couleur jeton
+        positionTuile = -1;
     }
     
     public void placerPion(int posCase_i, int posCase_j, int posTuile) {
