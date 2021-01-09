@@ -110,12 +110,20 @@ public class MainInterface extends javax.swing.JFrame {
         Nom_Joueur_Blanc = new javax.swing.JTextField();
         Btn_init2 = new javax.swing.JButton();
         Panneau_infos = new javax.swing.JPanel();
+        AffNomJoueurCourant = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        RecupLigneTableau = new javax.swing.JTextField();
+        RecupColonneTableau = new javax.swing.JTextField();
+        RecupPosTuile = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        BtnPosPion = new javax.swing.JButton();
 
         jButton10.setText("jButton10");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 800));
 
         PlateauJeu.setBackground(new java.awt.Color(204, 204, 255));
         PlateauJeu.setPreferredSize(new java.awt.Dimension(780, 780));
@@ -262,11 +270,38 @@ public class MainInterface extends javax.swing.JFrame {
         Panneau_joueurs.add(Btn_init2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 110, 40));
 
         Panneau_infos.setBackground(new java.awt.Color(255, 255, 204));
-        Panneau_infos.setPreferredSize(new java.awt.Dimension(462, 130));
+        Panneau_infos.setPreferredSize(new java.awt.Dimension(462, 160));
         Panneau_infos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("Tour Du Joueur");
-        Panneau_infos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 140, -1));
+        AffNomJoueurCourant.setText("Nom Du Joueur");
+        Panneau_infos.add(AffNomJoueurCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 140, -1));
+
+        jLabel2.setText("Joueur :");
+        Panneau_infos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel3.setText("Ligne case (0 à 5) :");
+        Panneau_infos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        jLabel4.setText("Colonne case (0 à 5) :");
+        Panneau_infos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        jLabel5.setText("Position sur la tuile :");
+        Panneau_infos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        Panneau_infos.add(RecupLigneTableau, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 60, -1));
+        Panneau_infos.add(RecupColonneTableau, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 60, -1));
+        Panneau_infos.add(RecupPosTuile, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 60, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        jLabel6.setText("(0 à 7 celon la position de la tuile)");
+        Panneau_infos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 10));
+
+        BtnPosPion.setText("Positionner Pion");
+        BtnPosPion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPosPionActionPerformed(evt);
+            }
+        });
+        Panneau_infos.add(BtnPosPion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -294,7 +329,7 @@ public class MainInterface extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Panneau_joueurs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Panneau_infos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Panneau_infos, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(CartesJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(PlateauJeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -344,7 +379,7 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void Btn_init2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_init2ActionPerformed
         // TODO add your handling code here:
-        CartesJoueur.setVisible(true);
+        // CartesJoueur.setVisible(true); a supprimer si solution 1 choix pos pion initiale fonctionne
         Panneau_infos.setVisible(true);
 
         switch (nbr_joueurs) { // récupération des noms des joueurs et création (pas de break pour dérouler la suite et éviter les répétitions)
@@ -435,6 +470,31 @@ public class MainInterface extends javax.swing.JFrame {
         String carte3 = "/Tiles/TsuroTiles" + joueurCourant.TuileJ[2].IndexTuile + "-" + joueurCourant.TuileJ[2].rotation + ".png";
         Carte3_Joueur.setIcon(new javax.swing.ImageIcon(getClass().getResource(carte3)));
     }//GEN-LAST:event_RotationCarte3ActionPerformed
+
+    private void BtnPosPionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPosPionActionPerformed
+        // TODO add your handling code here:
+        Integer poscasei = Integer.valueOf(RecupLigneTableau.getText());
+        Integer poscasej = Integer.valueOf(RecupColonneTableau.getText());
+        Integer postuile = Integer.valueOf(RecupPosTuile.getText());
+        switch (poscasei) {
+            case 0:
+                if (poscasej == 0) {
+                    if (postuile == 0 || postuile == 1 || postuile == 6 || postuile == 7) {
+                        joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
+                        JoueurSuivant();
+                    }
+                } else if (poscasej > 0 && poscasej < 5) {
+                    
+                } else if (poscasej == 5) {
+                    
+                }
+                break;
+        }
+        
+        if (joueurCourant.PionJ.positionTuile != -1) {
+            CartesJoueur.setVisible(true);
+        }
+    }//GEN-LAST:event_BtnPosPionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -597,7 +657,7 @@ public class MainInterface extends javax.swing.JFrame {
         for (int i = 0; i < 8; i++) {
             if (ListeJoueurs[i] != null) {
                 DistribuerCarte(i);
-                PositionnerPion(i);
+                // PositionnerPion(i); a suppr si pos pion sol 1 fonctionne
             }
         }
 
@@ -607,6 +667,7 @@ public class MainInterface extends javax.swing.JFrame {
             Jdebut = (Jdebut + 1) % 8;
         }
         joueurCourant = ListeJoueurs[Jdebut];
+        AffNomJoueurCourant.setText(joueurCourant.Nom);
     }
 
     public void DistribuerCarte(int numJ) {
@@ -615,7 +676,8 @@ public class MainInterface extends javax.swing.JFrame {
         }
     }
 
-    public void PositionnerPion(int numJ) { // TROUEVR SOLUTION ATTRIBUER CASE INITIALE (bouton tout le tour ?)
+    public void PositionnerPion(int numJ) { // TROUVER SOLUTION ATTRIBUER CASE INITIALE (bouton tout le tour ?)
+        AffNomJoueurCourant.setText(ListeJoueurs[numJ].Nom);
         System.out.println("Quel case voulez vous posez votre jeton ? (entrer ligne puis colonne)");
         Scanner sc = new Scanner(System.in);
         Integer poscasei = Integer.valueOf(sc.nextLine());
@@ -639,6 +701,7 @@ public class MainInterface extends javax.swing.JFrame {
             AfficherVictoire();
         }
         joueurCourant = ListeJoueurs[(numJoueur + 1) % 8];
+        AffNomJoueurCourant.setText(joueurCourant.Nom);
     }
     
     public void AfficherVictoire() {
@@ -647,6 +710,8 @@ public class MainInterface extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AffNomJoueurCourant;
+    private javax.swing.JButton BtnPosPion;
     private javax.swing.JButton Btn_init1;
     private javax.swing.JButton Btn_init2;
     private javax.swing.JButton Carte1_Joueur;
@@ -674,11 +739,18 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel Panneau_joueurs;
     private javax.swing.JPanel Panneau_start;
     private javax.swing.JPanel PlateauJeu;
+    private javax.swing.JTextField RecupColonneTableau;
+    private javax.swing.JTextField RecupLigneTableau;
+    private javax.swing.JTextField RecupPosTuile;
     private javax.swing.JButton RotationCarte1;
     private javax.swing.JButton RotationCarte2;
     private javax.swing.JButton RotationCarte3;
     private javax.swing.JButton jButton10;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
