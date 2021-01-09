@@ -39,6 +39,18 @@ public class Tuile {
         TabPion[i] = pion;
         return true;
     }
+    
+    public boolean PionAbsent(Pion pion) {
+        int i = 0;
+        while (TabPion[i] != pion) {
+            i++;
+            if (i == 3) {
+                return false;
+            }
+        }
+        TabPion[i] = null;
+        return true;
+    }
 
     public void PositionnerTuile(int Pos_i, int Pos_j) {
         pos_j = Pos_j;

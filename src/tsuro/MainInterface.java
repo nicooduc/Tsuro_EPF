@@ -683,12 +683,17 @@ public class MainInterface extends javax.swing.JFrame {
     public void PoserPionSurCarte(Pion pion) {
         plateau.grilleTuile[pion.positionCase_i][pion.positionCase_j].PionPresent(pion);
     }
+    
+    public void EnleverPionSurCarte(Pion pion) {
+        plateau.grilleTuile[pion.positionCase_i][pion.positionCase_j].PionAbsent(pion);
+    }
 
     public void DeplacementPions(int placeTuile_i, int placeTuile_j) {
         int retour = 0;
         for (int i = 0; i < 8; i++) {
             if (ListeJoueurs[i] != null) {
                 if (ListeJoueurs[i].PionJ.positionCase_i == placeTuile_i && ListeJoueurs[i].PionJ.positionCase_j == placeTuile_j) {
+                    EnleverPionSurCarte(joueurCourant.PionJ);
                     do {
                         retour = BougerPion(i, placeTuile_i, placeTuile_j);
                     } while (retour == 1);
@@ -696,6 +701,8 @@ public class MainInterface extends javax.swing.JFrame {
                     System.out.println("pos i " + ListeJoueurs[i].PionJ.positionCase_i); // connaitre emplacement pions en attendant de trouver une solution graphique
                     System.out.println("pos j " + ListeJoueurs[i].PionJ.positionCase_j);
                     System.out.println("pos t " + ListeJoueurs[i].PionJ.positionTuile);
+                    PoserPionSurCarte(joueurCourant.PionJ);
+                    PlateauJeu.repaint();
                     if (retour == -1) {
                         int k = 0;
                         while (OrdreJoueurs[k] != null) {
