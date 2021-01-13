@@ -558,7 +558,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej > 0 && poscasej < 5) {
@@ -566,7 +565,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -574,7 +572,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 }
@@ -585,7 +582,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -593,7 +589,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 }
@@ -604,7 +599,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -612,7 +606,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 }
@@ -623,7 +616,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -631,7 +623,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 }
@@ -642,7 +633,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -650,7 +640,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 }
@@ -661,7 +650,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej > 0 && poscasej < 5) {
@@ -669,7 +657,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 } else if (poscasej == 5) {
@@ -677,7 +664,6 @@ public class MainInterface extends javax.swing.JFrame {
                         joueurCourant.PionJ.placerPion(poscasei, poscasej, postuile);
                         PoserPionSurCarte(joueurCourant.PionJ);
                         PlateauJeu.repaint();
-                        EnleverPionSurCarte(joueurCourant.PionJ);
                         JoueurSuivant();
                     }
                 }
